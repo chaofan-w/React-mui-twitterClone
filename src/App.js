@@ -51,6 +51,7 @@ import styled from "styled-components";
 import SideNavBar from "./SideNavBar";
 import SearchAppBar from "./SearchBar";
 import TweetEditing from "./TweetEditing";
+import WhatsHappening from "./WhatsHappening";
 
 const App = () => {
   return (
@@ -67,13 +68,14 @@ const App = () => {
           maxWidth: "1080px",
           minWidth: "500px",
           height: "100%",
+
           margin: "0 auto",
         }}
       >
-        <Grid item xs sm md sx={{ border: "1px solid red" }}>
+        <Grid item xs sm="auto" md="auto" sx={{ border: "1px solid red" }}>
           <SideNavBar />
         </Grid>
-        <Grid item xs={10} sm={10} md={5.5} sx={{ border: "1px solid green" }}>
+        <Grid item xs={10} sm={10} md sx={{ border: "1px solid green" }}>
           <TweetEditing />
         </Grid>
         <Grid
@@ -84,11 +86,25 @@ const App = () => {
             display: {
               xs: "none",
               sm: "none",
-              md: "block",
+              md: "flex",
             },
+            flexDirection: "column",
+            alignItems: "flex-start",
+            gap: 3,
           }}
         >
-          <SearchAppBar />
+          <Box sx={{ width: "100%" }}>
+            <SearchAppBar />
+          </Box>
+          <Box sx={{ width: "100%", borderRadius: 0 }}>
+            <Paper
+              variant="outlined"
+              elevation={0}
+              sx={{ bgcolor: "rgb(247,249,249)" }}
+            >
+              <WhatsHappening />
+            </Paper>
+          </Box>
         </Grid>
       </Grid>
     </Box>
