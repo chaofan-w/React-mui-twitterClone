@@ -1,17 +1,45 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { lightBlue } from "@mui/material/colors";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { ThemeProvider, createTheme, CssBaseline, Paper } from "@mui/material";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+//https://mui.com/material-ui/customization/default-theme/
+//material ui default theme
+const theme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#1DA1F2",
+      light: lightBlue[100],
+      dark: lightBlue[900],
+    },
+    secondary: {
+      main: "#657786",
+      light: "#AAB8c2",
+      dark: "#14171A",
+    },
+  },
+  typography: {
+    fontFamily: "'Helvetica Neue', 'Ubuntu', 'Roboto', sans-serif",
+  },
+  backgournd: {
+    hover: "#F5F8FA",
+  },
+  spacing: 4,
+  // spacing: (factor) => `${0.25 * factor}rem`,
+});
+
+console.log(theme);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
