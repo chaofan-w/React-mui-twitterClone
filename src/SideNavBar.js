@@ -99,6 +99,7 @@ const SideNavBar = () => {
       sx={{
         width: "100%",
         height: "100%",
+        minHeight: "680px",
         maxWidth: {
           xs: 64,
           sm: 96,
@@ -108,10 +109,21 @@ const SideNavBar = () => {
         mb: 0,
         ml: 0,
         mr: 0,
-        // borderRight: "1px solid #E7E7E7",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "space-between",
+        p: 2,
       }}
     >
-      <Paper elevation={0}>
+      <Box
+        component="div"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
         <List
           sx={{
             display: "flex",
@@ -263,7 +275,7 @@ const SideNavBar = () => {
             },
           }}
         >
-          <Button
+          <ButtonBase
             disablePadding
             varient="contained"
             sx={{
@@ -271,11 +283,11 @@ const SideNavBar = () => {
                 xs: 50,
                 sm: 50,
               },
-              height: {
-                xs: 60,
-                sm: 60,
-              },
 
+              height: {
+                xs: 50,
+                sm: 50,
+              },
               borderRadius: "50%",
               bgcolor: "primary.main",
               color: "white",
@@ -301,63 +313,85 @@ const SideNavBar = () => {
             }}
           >
             <HistoryEduOutlined sx={{ fontSize: "30px" }} />
-          </Button>
+          </ButtonBase>
         </Box>
-        <Box
-          component="div"
-          position="absolute"
-          bottom={0}
+      </Box>
+      <Box
+        component="div"
+        sx={{
+          width: {
+            md: 230,
+          },
+        }}
+      >
+        <ButtonBase
+          varient="contained"
           sx={{
-            display: {
-              xs: "none",
-              sm: "none",
-              md: "block",
-            },
-            mb: 10,
             width: {
+              // xs: 48,
+              // sm: 48,
               md: 230,
+            },
+            height: {
+              // xs: 48,
+              // sm: 48,
+              md: 56,
+            },
+            // mt: 5,
+
+            p: 2,
+            border: "1px solid red",
+
+            borderRadius: 10,
+            color: "secondary.dark",
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: {
+              md: "space-between",
+              xs: "center",
+              sm: "center",
+            },
+            "&:hover": {
+              bgcolor: "#E7E7E7",
             },
           }}
         >
+          <Stack direction="row" spacing={3}>
+            <Avatar src={crescendoLogo} alt="twitter avatar" />
+            <Stack
+              direction="column"
+              spacing={0}
+              alignItems="flex-start"
+              sx={{
+                display: {
+                  xs: "none",
+                  sm: "none",
+                  md: "flex",
+                },
+              }}
+            >
+              <Typography fontWeight="medium">Crescendo Plus</Typography>
+              <Typography fontSize="small" color="secondary.main">
+                @Crescendo_plus
+              </Typography>
+            </Stack>
+          </Stack>
           <ButtonBase
-            varient="contained"
+            disableRipple
             sx={{
-              width: {
-                md: 230,
-              },
-              height: {
-                md: 56,
-              },
-              mt: 5,
-              p: 2,
-
-              borderRadius: 10,
-              color: "secondary.dark",
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-              "&:hover": {
-                bgcolor: "#E7E7E7",
+              display: {
+                xs: "none",
+                sm: "none",
+                md: "block",
               },
             }}
           >
-            <Stack direction="row" spacing={3}>
-              <Avatar src={crescendoLogo} alt="twitter avatar" />
-              <Stack direction="column" spacing={0} alignItems="flex-start">
-                <Typography fontWeight="medium">Crescendo Plus</Typography>
-                <Typography fontSize="small" color="secondary.main">
-                  @Crescendo_plus
-                </Typography>
-              </Stack>
-            </Stack>
-            <ButtonBase disableRipple>
-              <MoreHorizRounded />
-            </ButtonBase>
+            <MoreHorizRounded />
           </ButtonBase>
-        </Box>
-      </Paper>
+        </ButtonBase>
+      </Box>
     </Box>
   );
 };
