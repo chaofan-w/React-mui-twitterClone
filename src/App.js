@@ -52,6 +52,7 @@ import SideNavBar from "./SideNavBar";
 import SearchAppBar from "./SearchBar";
 import TweetEditing from "./TweetEditing";
 import WhatsHappening from "./WhatsHappening";
+import WhotoFollow from "./WhotoFollow";
 
 const App = () => {
   return (
@@ -98,11 +99,20 @@ const App = () => {
           </Box>
           <Box sx={{ width: "100%", borderRadius: 0 }}>
             <Paper
-              variant="outlined"
+              // variant="outlined"
               elevation={0}
               sx={{ bgcolor: "rgb(247,249,249)" }}
             >
               <WhatsHappening />
+            </Paper>
+          </Box>
+          <Box sx={{ width: "100%", borderRadius: 0 }}>
+            <Paper
+              // variant="outlined"
+              elevation={0}
+              sx={{ bgcolor: "rgb(247,249,249)" }}
+            >
+              <WhotoFollow />
             </Paper>
           </Box>
         </Grid>
