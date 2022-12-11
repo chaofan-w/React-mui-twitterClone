@@ -3,7 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { lightBlue } from "@mui/material/colors";
 
-import { ThemeProvider, createTheme, CssBaseline, Paper } from "@mui/material";
+import {
+  ThemeProvider,
+  createTheme,
+  CssBaseline,
+  Paper,
+  alpha,
+} from "@mui/material";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,6 +27,11 @@ const theme = createTheme({
       main: "#657786",
       light: "#AAB8c2",
       dark: "#14171A",
+    },
+
+    myLightBlue: {
+      main: alpha(lightBlue[200], 0.25),
+      dark: lightBlue[700],
     },
   },
   typography: {

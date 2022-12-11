@@ -1,5 +1,7 @@
 import * as React from "react";
-
+//customize mui components from classes
+import BadgeUnstyled, { badgeUnstyledClasses } from "@mui/base/BadgeUnstyled";
+import { blue, grey } from "@mui/material/colors";
 import {
   Home,
   Tag,
@@ -53,6 +55,48 @@ const Img = styled.img({
   margin: 0,
 });
 
+//customize mui components
+//https://mui.com/base/react-badge/#slot-props
+const StyledBadge = styled(BadgeUnstyled)(
+  ({ theme }) => `
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    list-style: none;
+    font-family: IBM Plex Sans, sans-serif;
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+  & .${badgeUnstyledClasses.badge} {
+    z-index: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 20px;
+    width:20px;
+    height: 20px;
+    padding: 0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 20px;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 50%;
+    background: ${blue[500]};
+    box-shadow: 0px 4px 8px ${
+      theme.palette.mode === "dark" ? grey[900] : grey[300]
+    };
+    transform: translate(50%, -50%);
+    transform-origin: 100% 0;
+    
+  }
+
+`
+);
+
 const sideBarItems = [
   {
     icon: (
@@ -67,7 +111,17 @@ const sideBarItems = [
     label: "Explore",
   },
   {
-    icon: <NotificationsNone sx={{ ml: -1.5, fontSize: 28 }} />,
+    icon: (
+      <StyledBadge
+        variant="standard"
+        color="primary"
+        overlap="circular"
+        badgeContent={111}
+        max={99}
+      >
+        <NotificationsNone sx={{ ml: -1.5, fontSize: 28 }} />
+      </StyledBadge>
+    ),
     label: "Notifications",
   },
   {
@@ -340,8 +394,6 @@ const SideNavBar = () => {
             // mt: 5,
 
             p: 2,
-            border: "1px solid red",
-
             borderRadius: 10,
             color: "secondary.dark",
             textAlign: "center",

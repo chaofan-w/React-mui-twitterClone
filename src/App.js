@@ -72,17 +72,17 @@ const App = () => {
           margin: "0 auto",
         }}
       >
-        <Grid item xs sm="auto" md="auto" sx={{ border: "1px solid red" }}>
+        <Grid item xs sm="auto" md="auto">
           <SideNavBar />
         </Grid>
-        <Grid item xs={10} sm={10} md sx={{ border: "1px solid green" }}>
+        <Grid item xs={10} sm={10} md>
           <TweetEditing />
         </Grid>
         <Grid
           item
           md={3.5}
           sx={{
-            border: "1px solid yellow",
+            // border: "1px solid yellow",
             display: {
               xs: "none",
               sm: "none",
