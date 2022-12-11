@@ -64,7 +64,7 @@ const App = () => {
     >
       <Grid
         container
-        spcing={1}
+        spacing={2}
         sx={{
           maxWidth: "1080px",
           minWidth: "500px",
@@ -73,10 +73,20 @@ const App = () => {
           margin: "0 auto",
         }}
       >
-        <Grid item xs sm="auto" md="auto">
+        <Grid
+          item
+          xs
+          sm="auto"
+          md="auto"
+          // sx={{ border: "1px solid green"
+          // }}
+        >
           <SideNavBar />
         </Grid>
         <Grid item xs={10} sm={10} md>
+          <TweetEditing />
+          <TweetEditing />
+          <TweetEditing />
           <TweetEditing />
         </Grid>
         <Grid

@@ -140,8 +140,8 @@ const WhatsHappening = () => {
             }
           />
         </ListItem>
-        {whatshappeningData.slice(0, 4).map((item) => (
-          <ListItem key={item.tag} sx={{ position: "relative" }}>
+        {whatshappeningData.slice(0, 4).map((item, index) => (
+          <ListItem key={index} sx={{ position: "relative" }}>
             <ListItemButton
               sx={{
                 width: "100%",
@@ -212,7 +212,7 @@ const WhatsHappening = () => {
                     },
                   }}
                 >
-                  <ListItemIcon alignItems="flex-start">
+                  <ListItemIcon sx={{ alignItems: "flex-start" }}>
                     <MoreHorizRounded />
                   </ListItemIcon>
                 </ButtonBase>

@@ -209,8 +209,9 @@ const SideNavBar = () => {
               <Img src={twitterLogo} alt="twitter logo" />
             </ButtonBase>
           </ListItem>
-          {sideBarItems.map((listItem) => (
+          {sideBarItems.map((listItem, index) => (
             <ListItem
+              key={index}
               disablePadding
               sx={{
                 height: {
