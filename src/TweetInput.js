@@ -52,7 +52,8 @@ const TweetInput = () => {
       component="form"
       sx={{
         width: "100%",
-        border: "1px solid red",
+        // border: "1px solid red",
+        position: "relative",
       }}
       spacing={2}
       noValidate
@@ -64,8 +65,7 @@ const TweetInput = () => {
         autoFocus
         onChange={(e) => {
           let input = e.target.value;
-          console.log(input.length);
-          setValue(input.length <= 280 ? input : input.slice(0, 280));
+          setValue(e.target.value);
         }}
         value={value}
         placeholder="What's happening?"
@@ -74,10 +74,32 @@ const TweetInput = () => {
         rowsMax="3"
         sx={{
           fontSize: "20px",
-
           maxWidth: "100%",
+          color: "transparent",
+          zIndex: 10,
+          "& textarea::placeholder": {
+            color: "grey",
+          },
         }}
       />
+      {value && (
+        <Typography
+          sx={{
+            width: "100%",
+            maxWidth: 480,
+            overflowWrap: "break-word",
+            fontSize: "20px",
+            position: "absolute",
+            border: "1px solid black",
+            top: 3,
+          }}
+        >
+          <span>{value.length <= 140 ? value : value.slice(0, 140)}</span>
+          <span style={{ color: "red" }}>
+            {value.length > 140 ? value.slice(140) : null}
+          </span>
+        </Typography>
+      )}
     </Box>
   );
 };
