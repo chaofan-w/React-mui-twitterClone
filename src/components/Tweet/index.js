@@ -16,10 +16,10 @@ const Tweet = ({ displayName, username, avatarSrc, tweetContents }) => {
       />
       <TweetContents>{tweetContents}</TweetContents>
       <Timestamp>{date}</Timestamp>
-      <Divider />
+      {/* <Divider /> */}
 
       <ActionBar />
-      <Divider />
+      {/* <Divider /> */}
     </Wrapper>
   );
 };

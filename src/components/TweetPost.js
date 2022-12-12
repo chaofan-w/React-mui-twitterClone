@@ -11,7 +11,7 @@ const TweetPost = () => {
       component="div"
       sx={{
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
         height: "inherit",
         width: "inherit",

@@ -52,14 +52,15 @@ const TweetEditing = () => {
       sx={{
         maxWidth: "100%",
         maxHeight: "100%",
-        width: "fit-content",
+        // width: "fit-content",
         // border: "1px solid blue",
       }}
     >
       <Paper
         elevation={0}
-        variant="outlined"
         sx={{
+          border: "1px solid rgb(225,225,225) ",
+          borderRadius: 0,
           "&:hover": {
             bgcolor: "rgb(247,249,249)",
           },
