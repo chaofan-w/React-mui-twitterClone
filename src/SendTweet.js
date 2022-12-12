@@ -47,7 +47,12 @@ import TweetInput from "./TweetInput";
 
 const SendTweet = () => {
   return (
-    <Box sx={{ maxWidth: "100%", border: "1px solid green" }}>
+    <Box
+      sx={{
+        maxWidth: "100%",
+        // border: "1px solid green"
+      }}
+    >
       <Paper
         elevation={0}
         sx={{
@@ -83,7 +88,7 @@ const SendTweet = () => {
             sx={{
               maxWidth: "100%",
               width: "100%",
-              border: "1px solid blueviolet",
+              // border: "1px solid blueviolet",
             }}
             direction="column"
             alignItems="flex-start"
