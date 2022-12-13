@@ -51,6 +51,7 @@ import {
 } from "@mui/icons-material";
 import styled from "styled-components";
 import ReplyAudienceSelectPopover from "./ReplyAudienceSelectPopover copy";
+import CircularStatic from "./WordLimitProgress";
 
 const tweetFeatureIcons = [
   {
@@ -200,8 +201,15 @@ const TweetInput = () => {
             </IconButton>
           ))}
         </Stack>
-        <Stack>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="flex-end"
+          sx={{ gap: 2 }}
+        >
+          {value && <CircularStatic inputLength={value.length} />}
           <Button
+            disabled={value.length > 140}
             sx={{
               bgcolor: "primary.main",
               color: "white",
@@ -209,6 +217,10 @@ const TweetInput = () => {
               fontSize: "12px",
               "&:hover": {
                 bgcolor: "primary.dark",
+              },
+              "&:disabled": {
+                bgcolor: "lightgrey",
+                color: "grey",
               },
             }}
           >
