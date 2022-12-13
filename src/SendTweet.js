@@ -67,7 +67,7 @@ const SendTweet = () => {
           alignItems="flex-start"
           justifyContent="flex-start"
           spacing={3}
-          sx={{ p: 3 }}
+          sx={{ pl: 3, pr: 3, pb: 0 }}
         >
           <IconButton
             sx={{

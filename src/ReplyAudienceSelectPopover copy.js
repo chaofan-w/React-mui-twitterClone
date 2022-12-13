@@ -40,14 +40,31 @@ import {
   SupervisedUserCircle,
   KeyboardArrowDown,
   Check,
+  AlternateEmailOutlined,
 } from "@mui/icons-material";
 import styled from "styled-components";
 
-const AudienceSelectPopover = () => {
+const replyAudienceIcons = [
+  {
+    icon: <Public sx={{ fontSize: "14px" }} />,
+    reply: "Everyone",
+  },
+  {
+    icon: <SupervisedUserCircle sx={{ fontSize: "14px" }} />,
+    reply: "Only people you follow",
+  },
+  {
+    icon: <AlternateEmailOutlined sx={{ fontSize: "14px" }} />,
+    reply: "Only people you mention",
+  },
+];
+
+const ReplyAudienceSelectPopover = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [audience, setAudience] = React.useState("Everyone");
+  const [replyAudience, setReplyAudience] = React.useState("Everyone");
 
   const handleClick = (event) => {
+    event.preventDefault();
     setAnchorEl(event.currentTarget);
   };
 
@@ -55,8 +72,8 @@ const AudienceSelectPopover = () => {
     setAnchorEl(null);
   };
 
-  const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
+  const openReplyAudience = Boolean(anchorEl);
+  const id = openReplyAudience ? "simple-popover-replyAudience" : undefined;
   return (
     <Stack direciton="column" alignItems="flex-start">
       <Box>
@@ -68,21 +85,30 @@ const AudienceSelectPopover = () => {
           sx={{
             fontize: "14px",
             fontWeight: "500",
-            color: audience === "Everyone" ? "primary.main" : "green",
+            color: "primary.main",
             bgcolor: "transparent",
-            border: "1px solid rgb(225,225,225)",
+            border: "none",
             borderRadius: "10px",
             display: "flex",
             alignItems: "center",
           }}
         >
-          {audience}
+          {replyAudience && (
+            <Typography sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              {
+                replyAudienceIcons.filter((icon) => {
+                  return icon.reply === replyAudience;
+                })[0].icon
+              }
+              {replyAudience + " can reply"}
+            </Typography>
+          )}
           <KeyboardArrowDown sx={{ fontSize: "14px" }} />
         </Box>
         <Popover
           disablePadding
           id={id}
-          open={open}
+          open={openReplyAudience}
           anchorEl={anchorEl}
           onClose={handleClose}
           anchorOrigin={{
@@ -90,19 +116,22 @@ const AudienceSelectPopover = () => {
             horizontal: "left",
           }}
           sx={{
-            width: 300,
+            maxWidth: 540,
             p: 1,
           }}
         >
           <List disablePadding>
             <ListItem>
-              <ListItemText primary="Choose Audience" />
+              <ListItemText
+                primary="Who can reply?"
+                secondary="Choose who can reply to this Tweet. Anyone mentioned can always reply."
+              />
             </ListItem>
             <ListItem disablePadding key="everyone">
               <ListItemButton
                 disablePadding
                 sx={{
-                  width: "240px",
+                  width: "360px",
                   height: "48px",
                   display: "flex",
                   flexDirection: "row",
@@ -110,7 +139,7 @@ const AudienceSelectPopover = () => {
                   justifyContent: "space-between",
                 }}
                 onClick={() => {
-                  setAudience("Everyone");
+                  setReplyAudience("Everyone");
                   handleClose();
                 }}
               >
@@ -122,16 +151,16 @@ const AudienceSelectPopover = () => {
                     Everyone
                   </Typography>
                 </Stack>
-                {audience === "Everyone" ? (
+                {replyAudience === "Everyone" ? (
                   <Check sx={{ color: "primary.main" }} />
                 ) : null}
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding key="circle">
+            <ListItem disablePadding key="follow">
               <ListItemButton
                 disablePadding
                 sx={{
-                  width: "240px",
+                  width: "360px",
                   height: "48px",
                   display: "flex",
                   flexDirection: "row",
@@ -139,7 +168,7 @@ const AudienceSelectPopover = () => {
                   justifyContent: "space-between",
                 }}
                 onClick={() => {
-                  setAudience("Twitter Circle");
+                  setReplyAudience("Only people you follow");
                   handleClose();
                 }}
               >
@@ -148,11 +177,40 @@ const AudienceSelectPopover = () => {
                     sx={{ fontSize: "24px", color: "green", m: 0 }}
                   />
                   <Typography sx={{ fontSize: "20px", p: 0, m: 0 }}>
-                    Twitter Circle
+                    Only People you follow
                   </Typography>
                 </Stack>
-                {audience === "Twitter Circle" ? (
+                {replyAudience === "Only people you follow" ? (
                   <Check sx={{ color: "green" }} />
+                ) : null}
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding key="mention">
+              <ListItemButton
+                disablePadding
+                sx={{
+                  width: "360px",
+                  height: "48px",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+                onClick={() => {
+                  setReplyAudience("Only people you mention");
+                  handleClose();
+                }}
+              >
+                <Stack direction="row" alignItems="center" spacing={2}>
+                  <AlternateEmailOutlined
+                    sx={{ fontSize: "24px", color: "violet", m: 0 }}
+                  />
+                  <Typography sx={{ fontSize: "20px", p: 0, m: 0 }}>
+                    Only people you mention
+                  </Typography>
+                </Stack>
+                {replyAudience === "Only people you mention" ? (
+                  <Check sx={{ color: "violet" }} />
                 ) : null}
               </ListItemButton>
             </ListItem>
@@ -163,4 +221,4 @@ const AudienceSelectPopover = () => {
   );
 };
 
-export default AudienceSelectPopover;
+export default ReplyAudienceSelectPopover;
