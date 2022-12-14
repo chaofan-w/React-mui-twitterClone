@@ -130,7 +130,7 @@ const WhotoFollow = () => {
 
   return (
     <Box component="div" sx={{ width: "100%" }}>
-      <List disablePadding>
+      <List sx={{ width: "100%" }}>
         {/* <ListItem>
           <ListItemText
             primary={
@@ -142,7 +142,7 @@ const WhotoFollow = () => {
             }
           />
         </ListItem> */}
-        <Box>
+        <Box sx={{ p: 1 }}>
           <Typography variant="h6" fontWeight="medium">
             Who to follow
           </Typography>
@@ -152,7 +152,7 @@ const WhotoFollow = () => {
             <ListItem
               disablePadding
               key={item.twitterName}
-              sx={{ position: "relative", maxwidth: "100%", maxHeight: 108 }}
+              sx={{ position: "relative", width: "100%", maxHeight: 108 }}
             >
               <ListItemButton
                 onClick={(e) => {
@@ -175,15 +175,20 @@ const WhotoFollow = () => {
                   justifyContent="flex-start"
                   alignItems="flex-start"
                   spacing={3}
+                  sx={{ ml: -3 }}
                 >
                   <Img src={item.avatarUrl} alt={item.userName} />
                   <Box>
                     <>
                       <React.Fragment>
                         <Typography
-                          sx={{ display: "inline" }}
+                          sx={{
+                            display: "inline",
+                            ml: 0,
+                            fontSize: "12px",
+                            fontWeight: "600",
+                          }}
                           component="span"
-                          variant="subtitle2"
                           color="text.primary"
                         >
                           {item.userName}
