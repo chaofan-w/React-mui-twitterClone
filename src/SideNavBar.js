@@ -152,7 +152,7 @@ const SideNavBar = () => {
       component="div"
       sx={{
         width: "100%",
-        height: "100%",
+        height: "80vh",
         minHeight: "680px",
         maxWidth: {
           xs: 64,

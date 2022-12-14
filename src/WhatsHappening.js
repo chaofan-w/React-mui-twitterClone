@@ -99,15 +99,15 @@ const whatshappeningData = [
 ];
 
 const Img = styled.img(({ theme }) => ({
-  width: "64px",
-  height: "64px",
+  width: "60px",
+  height: "60px",
   objectFit: "cover",
   display: "block",
   margin: 0,
   borderRadius: 10,
   position: "absolute",
-  top: 0,
-  right: 10,
+  top: 1,
+  right: 0,
 }));
 
 const WhatsHappening = () => {
@@ -125,13 +125,13 @@ const WhatsHappening = () => {
   const id = open ? "simple-popover" : undefined;
   return (
     <Box component="div" sx={{ width: "100%" }}>
-      <List>
+      <List sx={{ width: "100%" }}>
         <ListItem
-          sx={
-            {
-              // border: "1px solid red",
-            }
-          }
+          sx={{
+            width: "100%",
+            // border: "1px solid red",
+            p: 1,
+          }}
         >
           <Box>
             <React.Fragment>
@@ -142,8 +142,16 @@ const WhatsHappening = () => {
           </Box>
         </ListItem>
         {whatshappeningData.slice(0, 4).map((item, index) => (
-          <ListItem key={index} sx={{ position: "relative" }}>
+          <ListItem
+            key={index}
+            sx={{
+              position: "relative",
+              width: "100%",
+              p: 1,
+            }}
+          >
             <ListItemButton
+              disablePadding
               sx={{
                 width: "100%",
                 height: "auto",
@@ -152,7 +160,7 @@ const WhatsHappening = () => {
                 position: "relative",
               }}
             >
-              <Box>
+              <Box disablePadding sx={{ width: "100%", ml: -3 }}>
                 <React.Fragment>
                   <Typography
                     sx={{ display: "inline" }}

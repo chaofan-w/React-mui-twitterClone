@@ -7,7 +7,7 @@ const TweetPostsContext = createContext(null);
 
 export default TweetPostsContext;
 
-const loginUserName = "adage";
+const loginUserName = "Reuters";
 
 const initialState = [...tweetsData].sort(
   (a, b) => b["timestamp"] - a["timestamp"]
