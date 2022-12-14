@@ -1,52 +1,8 @@
 import * as React from "react";
-import {
-  InputOutlined,
-  Pattern,
-  MoreVert,
-  ExpandMore,
-  Favorite,
-  Share,
-  Mail,
-  KeyboardArrowDown,
-  ArrowRight,
-  Home,
-  Settings,
-  People,
-  PermMedia,
-  Dns,
-  Public,
-  ExpandLess,
-} from "@mui/icons-material";
+
 // import InputOutlinedIcon from "@mui/icons-material/InputOutlined";
 // import PatternIcon from "@mui/icons-material/Pattern";
-import {
-  Box,
-  Button,
-  Typography,
-  Container,
-  Divider,
-  Paper,
-  Stack,
-  IconButton,
-  Card,
-  CardHeader,
-  Avatar,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Collapse,
-  Badge,
-  List,
-  ListItem,
-  ListButton,
-  ListItemIcon,
-  ListItemText,
-  ListItemButton,
-  Tooltip,
-  ListSubheader,
-  Grid,
-  ButtonBase,
-} from "@mui/material";
+import { Box, Paper, Grid } from "@mui/material";
 import styled from "styled-components";
 import SideNavBar from "./SideNavBar";
 import SearchAppBar from "./SearchBar";
@@ -55,13 +11,16 @@ import WhatsHappening from "./WhatsHappening";
 import WhotoFollow from "./WhotoFollow";
 import SendTweet from "./SendTweet";
 import HomeStickyBanner from "./HomeStickyBanner";
+import TweetPostsContext from "./TweetPostsContext";
 
 const App = () => {
+  const { tweetState } = React.useContext(TweetPostsContext);
   return (
     <Box
       sx={{
         height: "100vh",
         width: "100vw",
+        overflow: "auto",
       }}
     >
       <Grid
@@ -95,10 +54,12 @@ const App = () => {
           <Box sx={{ maxWidth: "100%" }}>
             <SendTweet />
           </Box>
-          <TweetEditing />
-          <TweetEditing />
-          <TweetEditing />
-          <TweetEditing />
+          <Box>
+            {tweetState &&
+              tweetState.map((tweet) => (
+                <TweetEditing key={tweet["tweetId"]} tweet={tweet} />
+              ))}
+          </Box>
         </Grid>
         <Grid
           item

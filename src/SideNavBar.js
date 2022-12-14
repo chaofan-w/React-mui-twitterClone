@@ -227,7 +227,7 @@ const SideNavBar = () => {
               }}
             >
               <ListItemButton
-                disablePadding
+                // disablePadding
                 sx={{
                   height: {
                     xs: 48,
@@ -251,7 +251,7 @@ const SideNavBar = () => {
                   {listItem.icon}
                 </ListItemIcon>
                 <ListItemText
-                  disablePadding
+                  // disablePadding
                   primary={listItem.label}
                   sx={{
                     display: {
@@ -300,7 +300,7 @@ const SideNavBar = () => {
           </Button>
         </Box>
         <Box
-          disablePadding
+          // disablePadding
           component="div"
           sx={{
             width: {
@@ -331,7 +331,7 @@ const SideNavBar = () => {
           }}
         >
           <ButtonBase
-            disablePadding
+            // disablePadding
             varient="contained"
             sx={{
               width: {

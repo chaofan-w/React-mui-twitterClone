@@ -130,7 +130,6 @@ const TweetInput = () => {
         placeholder="What's happening?"
         fullWidth
         multiline
-        rowsMax="3"
         sx={{
           // border: "1px solid green",
           fontSize: "20px",
@@ -189,6 +188,7 @@ const TweetInput = () => {
         >
           {tweetFeatureIcons.map((icon) => (
             <IconButton
+              key={icon.label}
               sx={{
                 width: "30px",
                 height: "30px",

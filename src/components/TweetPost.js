@@ -5,7 +5,7 @@ import Tweet from "./Tweet";
 
 import avatar from "./assets/Christopher-Wu.png";
 
-const TweetPost = () => {
+const TweetPost = ({ tweet }) => {
   return (
     <Box
       component="div"
@@ -22,10 +22,13 @@ const TweetPost = () => {
       }}
     >
       <Tweet
-        tweetContents="useSpring to make animation for the interaction feature"
-        displayName="Christopher Wu ✨"
-        username="christopher-wu"
-        avatarSrc={avatar}
+        tweetContents={tweet["text"]}
+        displayName={tweet["userName"]}
+        username={tweet["userScreenName"]}
+        avatarSrc={tweet["profileImgUrl"]}
+        timestamp={tweet["timestamp"]}
+        imgAttachment={tweet["imgAttachmentUrl"]}
+        tweet={tweet}
       />
     </Box>
   );

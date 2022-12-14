@@ -6,12 +6,13 @@ import TweetContext from "../../TweetContext";
 import PoppingCircle from "./PoppingCircle";
 import ConfettiPiece from "./ConfettiPiece";
 import { range, sample, random } from "../utils";
+import TweetPostsContext from "../../TweetPostsContext";
 
 const PARTICLE_COLORS = ["#e53935", "#1e88e5", "#43a047", "#fdd835", "#fb8c00"];
 
-const LikeButton = ({ size = 40 }) => {
-  const { tweetState, dispatch } = useContext(TweetContext);
-  const { isLikedByCurrentUser } = tweetState.like;
+const LikeButton = ({ size = 40, isLikedByCurrentUser }) => {
+  const { tweetState, dispatch } = useContext(TweetPostsContext);
+  // const isLikedByCurrentUser = tweetState.like;
   const heartSize = size * 0.6;
 
   return (

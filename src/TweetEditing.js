@@ -45,10 +45,10 @@ import {
 import styled from "styled-components";
 import TweetPost from "./components/TweetPost";
 
-const TweetEditing = () => {
+const TweetEditing = ({ tweet }) => {
   return (
     <Box
-      disablePadding
+      // disablePadding
       sx={{
         maxWidth: "100%",
         maxHeight: "100%",
@@ -66,7 +66,7 @@ const TweetEditing = () => {
           },
         }}
       >
-        <TweetPost />
+        <TweetPost tweet={tweet} />
       </Paper>
     </Box>
   );

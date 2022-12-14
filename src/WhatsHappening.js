@@ -105,6 +105,9 @@ const Img = styled.img(({ theme }) => ({
   display: "block",
   margin: 0,
   borderRadius: 10,
+  position: "absolute",
+  top: 0,
+  right: 10,
 }));
 
 const WhatsHappening = () => {
@@ -130,15 +133,13 @@ const WhatsHappening = () => {
             }
           }
         >
-          <ListItemText
-            primary={
-              <React.Fragment>
-                <Typography variant="h6" fontWeight="medium">
-                  What's hapening
-                </Typography>
-              </React.Fragment>
-            }
-          />
+          <Box>
+            <React.Fragment>
+              <Typography variant="h6" fontWeight="medium">
+                What's hapening
+              </Typography>
+            </React.Fragment>
+          </Box>
         </ListItem>
         {whatshappeningData.slice(0, 4).map((item, index) => (
           <ListItem key={index} sx={{ position: "relative" }}>
@@ -151,44 +152,39 @@ const WhatsHappening = () => {
                 position: "relative",
               }}
             >
-              <ListItemText
-                secondary={
-                  <>
-                    <React.Fragment>
-                      <Typography
-                        sx={{ display: "inline" }}
-                        component="span"
-                        variant="caption"
-                        color="text.primary"
-                      >
-                        {item.category}
-                      </Typography>
-                      <Typography></Typography>
-                      <Typography
-                        sx={{ display: "inline" }}
-                        component="span"
-                        variant="subtitle2"
-                        color="text.primary"
-                      >
-                        {item.tag}
-                      </Typography>
-                      <Typography></Typography>
-                      <Typography
-                        sx={{ display: "inline" }}
-                        component="span"
-                        variant="caption"
-                        color="text.primary"
-                      >
-                        {item.views > 1000
-                          ? `${parseFloat(item.views / 1000).toFixed(
-                              1
-                            )}K Tweets`
-                          : `${item.views} Tweets`}
-                      </Typography>
-                    </React.Fragment>
-                  </>
-                }
-              />
+              <Box>
+                <React.Fragment>
+                  <Typography
+                    sx={{ display: "inline" }}
+                    component="span"
+                    variant="caption"
+                    color="text.primary"
+                  >
+                    {item.category}
+                  </Typography>
+                  <Typography></Typography>
+                  <Typography
+                    sx={{ display: "inline" }}
+                    component="span"
+                    variant="subtitle2"
+                    color="text.primary"
+                  >
+                    {item.tag}
+                  </Typography>
+                  <Typography></Typography>
+                  <Typography
+                    sx={{ display: "inline" }}
+                    component="span"
+                    variant="caption"
+                    color="text.primary"
+                  >
+                    {item.views > 1000
+                      ? `${parseFloat(item.views / 1000).toFixed(1)}K Tweets`
+                      : `${item.views} Tweets`}
+                  </Typography>
+                </React.Fragment>
+              </Box>
+
               {item.imgUrl ? (
                 <Img src={item.imgUrl} alt={item.tag} />
               ) : (

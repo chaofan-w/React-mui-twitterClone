@@ -177,67 +177,65 @@ const WhotoFollow = () => {
                   spacing={3}
                 >
                   <Img src={item.avatarUrl} alt={item.userName} />
-                  <ListItemText
-                    secondary={
-                      <>
-                        <React.Fragment>
-                          <Typography
-                            sx={{ display: "inline" }}
-                            component="span"
-                            variant="subtitle2"
-                            color="text.primary"
-                          >
-                            {item.userName}
-                          </Typography>
-                          <Typography></Typography>
-                          <Typography
-                            sx={{ display: "inline" }}
-                            component="span"
-                            variant="caption"
-                            color="text.primary"
-                          >
-                            {item.twitterName}
-                          </Typography>
-                          <Typography></Typography>
-                          {item.isOfficial && (
-                            <React.Fragment>
-                              <Stack
-                                direction="row"
-                                alignItems="center"
-                                sx={{ mt: 1 }}
+                  <Box>
+                    <>
+                      <React.Fragment>
+                        <Typography
+                          sx={{ display: "inline" }}
+                          component="span"
+                          variant="subtitle2"
+                          color="text.primary"
+                        >
+                          {item.userName}
+                        </Typography>
+                        <Typography></Typography>
+                        <Typography
+                          sx={{ display: "inline" }}
+                          component="span"
+                          variant="caption"
+                          color="text.primary"
+                        >
+                          {item.twitterName}
+                        </Typography>
+                        <Typography></Typography>
+                        {item.isOfficial && (
+                          <React.Fragment>
+                            <Stack
+                              direction="row"
+                              alignItems="center"
+                              sx={{ mt: 1 }}
+                            >
+                              <HowToRegOutlined sx={{ fontSize: "14px" }} />
+                              <Typography
+                                sx={{ display: "inline" }}
+                                component="span"
+                                variant="caption"
+                                color="text.primary"
                               >
-                                <HowToRegOutlined sx={{ fontSize: "14px" }} />
-                                <Typography
-                                  sx={{ display: "inline" }}
-                                  component="span"
-                                  variant="caption"
-                                  color="text.primary"
-                                >
-                                  Official
-                                </Typography>
-                              </Stack>
-                              <Typography></Typography>
-                            </React.Fragment>
-                          )}
-                          {item.isPromoted && (
-                            <React.Fragment>
-                              <Stack direction="row" alignItems="center">
-                                <ScreenShare sx={{ fontSize: "14px" }} />
-                                <Typography
-                                  sx={{ display: "inline" }}
-                                  component="span"
-                                  variant="caption"
-                                  color="text.primary"
-                                >
-                                  Promoted
-                                </Typography>
-                              </Stack>
-                            </React.Fragment>
-                          )}
-                        </React.Fragment>
-                      </>
-                    }
-                  />
+                                Official
+                              </Typography>
+                            </Stack>
+                            <Typography></Typography>
+                          </React.Fragment>
+                        )}
+                        {item.isPromoted && (
+                          <React.Fragment>
+                            <Stack direction="row" alignItems="center">
+                              <ScreenShare sx={{ fontSize: "14px" }} />
+                              <Typography
+                                sx={{ display: "inline" }}
+                                component="span"
+                                variant="caption"
+                                color="text.primary"
+                              >
+                                Promoted
+                              </Typography>
+                            </Stack>
+                          </React.Fragment>
+                        )}
+                      </React.Fragment>
+                    </>
+                  </Box>
                 </Stack>
               </ListItemButton>
               <Box
