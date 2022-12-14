@@ -19,8 +19,8 @@ const App = () => {
     <Box
       sx={{
         height: "100vh",
-        // width: "100vw",
-        maxWidth: "1080px",
+        width: "100vw",
+        maxWidth: "1280px",
         overflow: "auto",
         "&::-webkit-scrollbar": {
           width: 0,
@@ -31,7 +31,7 @@ const App = () => {
         container
         spacing={2}
         sx={{
-          maxWidth: "1280px",
+          maxWidth: "100%",
           minWidth: "500px",
           height: "100%",
 
@@ -44,6 +44,7 @@ const App = () => {
           sm="auto"
           md="auto"
           lg="auto"
+          xl="auto"
           sx={{
             // border: "1px solid green",
             minWidth: {
@@ -70,7 +71,7 @@ const App = () => {
             <SideNavBar />
           </Box>
         </Grid>
-        <Grid item xs={10} sm={10} md={5.4} lg sx={{ position: "relative" }}>
+        <Grid item xs={10} sm={10} md={5.4} lg xl sx={{ position: "relative" }}>
           <Box
             sx={{ position: "sticky", top: 0, zIndex: 200, maxWidth: "100%" }}
           >
@@ -89,6 +90,7 @@ const App = () => {
         <Grid
           item
           lg="auto"
+          xl="auto"
           md="auto"
           sx={{
             // border: "1px solid yellow",
@@ -97,6 +99,7 @@ const App = () => {
               sm: "none",
               md: "flex",
               lg: "flex",
+              xl: "flex",
             },
             flexDirection: "column",
             alignItems: "flex-start",
@@ -105,6 +108,10 @@ const App = () => {
             // maxWidth: "100%",
             // width: "fit-content",
             // border: "1px solid red",
+            minWidth: {
+              md: "240px",
+              lg: "240px",
+            },
           }}
         >
           <Box
