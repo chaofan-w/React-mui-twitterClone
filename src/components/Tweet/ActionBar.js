@@ -7,13 +7,21 @@ import { useContext } from "react";
 import TweetContext from "../../TweetContext";
 import Rotate from "./Rotate";
 import PoppingCircle from "../LikeButton/PoppingCircle";
+import TweetPostsContext from "../../TweetPostsContext";
 
-const ActionBar = () => {
-  const { tweetState, dispatch } = useContext(TweetContext);
-  const { isRetweetedByCurrentUser, totalRetweets } = tweetState.retweet;
-  const { isLikedByCurrentUser, totalLikes } = tweetState.like;
-  const { isShareedByCurrentUser, totalShares } = tweetState.share;
-  const { isReplyedByCurrentUser, totalReplys } = tweetState.reply;
+const ActionBar = ({ tweet }) => {
+  const { dispatch, loginUserName } = useContext(TweetPostsContext);
+  // const { isRetweetedByCurrentUser, totalRetweets } = tweetState.retweet;
+  // const { isLikedByCurrentUser, totalLikes } = tweetState.like;
+  // const { isShareedByCurrentUser, totalShares } = tweetState.share;
+  // const { isReplyedByCurrentUser, totalReplys } = tweetState.reply;
+  const totalRetweets = tweet["retweetCount"].length;
+  const totalLikes = tweet["favoriteCount"].length;
+  const totalReplys = tweet["replyCount"].length;
+  const isRetweetedByCurrentUser =
+    tweet["retweetCount"].includes(loginUserName);
+  const isLikedByCurrentUser = tweet["favoriteCount"].includes(loginUserName);
+  const isReplyedByCurrentUser = tweet["replyCount"].includes(loginUserName);
 
   return (
     <Wrapper>
@@ -22,7 +30,7 @@ const ActionBar = () => {
           color="rgb(27, 149, 224)"
           size={40}
           onClick={() => {
-            dispatch({ type: "replyTweet" });
+            dispatch({ type: "replyTweet", tweetId: tweet["tweetId"] });
           }}
         >
           <TweetActionIcon
@@ -60,7 +68,7 @@ const ActionBar = () => {
           color="rgb(23, 191, 99)"
           size={40}
           onClick={() => {
-            dispatch({ type: "retweetTweet" });
+            dispatch({ type: "retweetTweet", tweetId: tweet["tweetId"] });
           }}
         >
           <Rotate reverse={!isRetweetedByCurrentUser}>
@@ -100,10 +108,10 @@ const ActionBar = () => {
           color="rgb(224, 36, 94)"
           size={40}
           onClick={() => {
-            dispatch({ type: "likeTweet" });
+            dispatch({ type: "likeTweet", tweetId: tweet["tweetId"] });
           }}
         >
-          <LikeButton />
+          <LikeButton isLikedByCurrentUser={isLikedByCurrentUser} />
         </Action>
         <Stat>
           {totalLikes > 1000
@@ -115,9 +123,9 @@ const ActionBar = () => {
         <Action
           color="rgb(27, 149, 224)"
           size={40}
-          onClick={() => {
-            dispatch({ type: "shareTweet" });
-          }}
+          // onClick={() => {
+          //   dispatch({ type: "shareTweet" });
+          // }}
         >
           <TweetActionIcon kind="share" />
         </Action>

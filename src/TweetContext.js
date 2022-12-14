@@ -1,5 +1,6 @@
 import { createContext, useReducer } from "react";
 import moment from "moment";
+
 const TweetContext = createContext(null);
 
 export default TweetContext;
@@ -8,17 +9,17 @@ const initialState = {
   reply: {
     id: "reply",
     isReplyedByCurrentUser: false,
-    totalReplys: 99,
+    totalReplys: 0,
   },
   retweet: {
     id: "retweet",
     isRetweetedByCurrentUser: false,
-    totalRetweets: 1984,
+    totalRetweets: 0,
   },
   like: {
     id: "like",
     isLikedByCurrentUser: false,
-    totalLikes: 29344,
+    totalLikes: 0,
   },
   share: {
     id: "share",
