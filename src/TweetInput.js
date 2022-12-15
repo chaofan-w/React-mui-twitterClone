@@ -52,16 +52,20 @@ import {
 import styled from "styled-components";
 import ReplyAudienceSelectPopover from "./ReplyAudienceSelectPopover copy";
 import CircularStatic from "./WordLimitProgress";
+import TweetPostsContext from "./TweetPostsContext";
+import { v4 as uuidv4 } from "uuid";
+import moment from "moment";
+import AttachTweetImgPopover from "./AttachTweetImgPopover";
 
 const tweetFeatureIcons = [
-  {
-    icon: (
-      <PhotoOutlined
-        sx={{ width: "20px", height: "20px", color: "primary.main" }}
-      />
-    ),
-    label: "insertPhoto",
-  },
+  // {
+  //   icon: (
+  //     <PhotoOutlined
+  //       sx={{ width: "20px", height: "20px", color: "primary.main" }}
+  //     />
+  //   ),
+  //   label: "insertPhoto",
+  // },
   {
     icon: (
       <GifBoxOutlined
@@ -106,6 +110,27 @@ const tweetFeatureIcons = [
 
 const TweetInput = () => {
   const [value, setValue] = React.useState("");
+  const [newTweetImgUrl, setNewTweetImgUrl] = React.useState("");
+  const { tweetState, dispatch, loginUserName } =
+    React.useContext(TweetPostsContext);
+
+  const handleSendingTweet = (e) => {
+    e.preventDefault();
+    const tweetId = uuidv4();
+    const text = value;
+    const imgAttachmentUrl = newTweetImgUrl;
+    const timestamp = Math.floor(new Date().getTime() / 1000);
+    dispatch({
+      type: "sendingNewTweet",
+      tweetId: tweetId,
+      text: text,
+      imgAttachmentUrl: imgAttachmentUrl,
+      timestamp: timestamp,
+    });
+    setValue("");
+    setNewTweetImgUrl("");
+  };
+
   return (
     <Box
       component="form"
@@ -123,7 +148,6 @@ const TweetInput = () => {
         variant="standard"
         autoFocus
         onChange={(e) => {
-          let input = e.target.value;
           setValue(e.target.value);
         }}
         value={value}
@@ -186,6 +210,7 @@ const TweetInput = () => {
           justifyContent="flex-start"
           sx={{ width: "50%", p: 0, m: 0 }}
         >
+          <AttachTweetImgPopover setNewTweetImgUrl={setNewTweetImgUrl} />
           {tweetFeatureIcons.map((icon) => (
             <IconButton
               key={icon.label}
@@ -209,7 +234,7 @@ const TweetInput = () => {
         >
           {value && <CircularStatic inputLength={value.length} />}
           <Button
-            disabled={value.length > 140}
+            disabled={value.length > 140 || value.length === 0}
             sx={{
               bgcolor: "primary.main",
               color: "white",
@@ -223,6 +248,7 @@ const TweetInput = () => {
                 color: "grey",
               },
             }}
+            onClick={handleSendingTweet}
           >
             Tweet
           </Button>
