@@ -13,40 +13,86 @@ const initialState = [...tweetsData].sort(
   (a, b) => b["timestamp"] - a["timestamp"]
 );
 
-const tweetReducer = (tweetState, action) => {
-  const tweetInteraction = (actionName) => {
-    let newTweetState = [...tweetState];
-    newTweetState = newTweetState.map((tweet) => {
-      if (
-        tweet["userScreenName"] !== loginUserName &&
-        tweet["tweetId"] === action.tweetId
-      ) {
-        if (!tweet[actionName].includes(loginUserName)) {
-          let newActionName = [...tweet[actionName], loginUserName];
-          return { ...tweet, [actionName]: newActionName };
-        } else {
-          let newActionName = [...tweet[actionName]].filter(
-            (item) => item !== loginUserName
-          );
-          return { ...tweet, [actionName]: newActionName };
-        }
+const tweetInteraction = (actionName, state, action) => {
+  let newTweetState = [...state];
+  newTweetState = newTweetState.map((tweet) => {
+    if (
+      tweet["userScreenName"] !== loginUserName &&
+      tweet["tweetId"] === action.tweetId
+    ) {
+      if (!tweet[actionName].includes(loginUserName)) {
+        let newActionName = [...tweet[actionName], loginUserName];
+        return { ...tweet, [actionName]: newActionName };
       } else {
-        return tweet;
+        let newActionName = [...tweet[actionName]].filter(
+          (item) => item !== loginUserName
+        );
+        return { ...tweet, [actionName]: newActionName };
       }
-    });
-    return [...newTweetState];
+    } else {
+      return tweet;
+    }
+  });
+  return [...newTweetState].sort((a, b) => b["timestamp"] - a["timestamp"]);
+};
+
+const sendingTweet = (state, action) => {
+  const loginUserData = userData.filter(
+    (user) => user["userScreenName"] === loginUserName
+  )[0];
+  const { userId, userName, profileImgUrl } = loginUserData;
+  const { tweetId, text, imgAttachmentUrl, timestamp } = action;
+  let newTweet = {
+    tweetId: tweetId,
+    text: text,
+    imgAttachmentUrl: imgAttachmentUrl,
+    timestamp: timestamp,
+    favoriteCount: [],
+    retweetCount: [],
+    replyCount: [],
+    userReplyToUserScreenName: "None",
+    userId: userId,
+    userName: userName,
+    userScreenName: loginUserName,
+    profileImgUrl: profileImgUrl,
   };
+  return [...state, newTweet].sort((a, b) => b["timestamp"] - a["timestamp"]);
+};
+
+const tweetReducer = (tweetState, action) => {
+  // const tweetInteraction = (actionName) => {
+  //   let newTweetState = [...tweetState];
+  //   newTweetState = newTweetState.map((tweet) => {
+  //     if (
+  //       tweet["userScreenName"] !== loginUserName &&
+  //       tweet["tweetId"] === action.tweetId
+  //     ) {
+  //       if (!tweet[actionName].includes(loginUserName)) {
+  //         let newActionName = [...tweet[actionName], loginUserName];
+  //         return { ...tweet, [actionName]: newActionName };
+  //       } else {
+  //         let newActionName = [...tweet[actionName]].filter(
+  //           (item) => item !== loginUserName
+  //         );
+  //         return { ...tweet, [actionName]: newActionName };
+  //       }
+  //     } else {
+  //       return tweet;
+  //     }
+  //   });
+  //   return [...newTweetState].sort((a, b) => b["timestamp"] - a["timestamp"]);
+  // };
 
   switch (action.type) {
     case "replyTweet": {
-      return tweetInteraction("replyCount");
+      return tweetInteraction("replyCount", tweetState, action);
     }
     case "retweetTweet": {
-      return tweetInteraction("retweetCount");
+      return tweetInteraction("retweetCount", tweetState, action);
     }
 
     case "likeTweet": {
-      return tweetInteraction("favoriteCount");
+      return tweetInteraction("favoriteCount", tweetState, action);
     }
     // case "shareTweet": {
     //   const { isShareedByCurrentUser, totalShares } = tweetState.share;
@@ -58,6 +104,9 @@ const tweetReducer = (tweetState, action) => {
     //     },
     //   };
     // }
+    case "sendingNewTweet": {
+      return sendingTweet(tweetState, action);
+    }
     default: {
       throw Error("unknow action type: " + action.type);
     }
