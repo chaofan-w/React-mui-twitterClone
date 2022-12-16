@@ -51,9 +51,9 @@ const FollowedByBar = ({ user }) => {
   )[0];
 
   const userInfo = userData.filter((u) => u["userScreenName"] === user)[0];
-  console.log(userInfo);
+  // console.log(userInfo);
   const userFollowedByAccounts = userInfo["userFollowedByAccounts"];
-  console.log(userFollowedByAccounts);
+  // console.log(userFollowedByAccounts);
 
   const FollowedByFollowingAccounts = user
     ? loginUserData["userFollowingAccounts"].filter((following) =>

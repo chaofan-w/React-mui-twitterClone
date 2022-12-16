@@ -79,7 +79,6 @@ const ProfileTopBanner = ({ user }) => {
         sx={{
           width: "100%",
           height: 300,
-          border: "1px solid red",
           mb: 3,
           position: "relative",
         }}
@@ -128,7 +127,6 @@ const ProfileTopBanner = ({ user }) => {
           sx={{
             width: "100%",
             height: 60,
-            border: "1px solid green",
             postion: "absolute",
             top: 240,
             left: 0,
