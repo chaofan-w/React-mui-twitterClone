@@ -42,10 +42,12 @@ import {
 } from "@mui/material";
 import { AutoAwesome, ArrowBack } from "@mui/icons-material";
 import ProfileTopBanner from "./ProfileTopBanner";
+import UserPageTabBar from "./UserPageTabBar";
 
 const UserHomePage = () => {
   const { tweetState } = React.useContext(TweetPostsContext);
   let { userScreenName } = useParams();
+  const [keyword, setKeyWord] = React.useState("tweets");
   // console.log(userScreenName);
   const homeContent = (
     <React.Fragment>
@@ -104,14 +106,69 @@ const UserHomePage = () => {
       <Box>
         <ProfileTopBanner user={userScreenName} />
       </Box>
+      <Box>
+        <UserPageTabBar setKeyWord={setKeyWord} />
+      </Box>
 
       <Box>
-        {tweetState &&
-          tweetState
-            .filter((tweet) => tweet["userScreenName"] === userScreenName)
-            .map((tweet) => (
-              <TweetEditing key={tweet["tweetId"]} tweet={tweet} />
-            ))}
+        {/* https://medium.com/nerd-for-tech/a-case-to-switch-using-switch-statements-in-react-e83e01154f60
+        use switch plus tab to realize the tab filter tweets feature        
+        */}
+        {(() => {
+          switch (keyword) {
+            case "tweets":
+              return (
+                <>
+                  {tweetState
+                    .filter(
+                      (tweet) => tweet["userScreenName"] === userScreenName
+                    )
+                    .map((tweet) => (
+                      <TweetEditing key={tweet["tweetId"]} tweet={tweet} />
+                    ))}
+                </>
+              );
+
+            case "tweetReplies":
+              return (
+                <>
+                  {tweetState
+                    .filter((tweet) =>
+                      tweet["replyCount"].includes(userScreenName)
+                    )
+                    .map((tweet) => (
+                      <TweetEditing key={tweet["tweetId"]} tweet={tweet} />
+                    ))}
+                </>
+              );
+            case "likes":
+              return (
+                <>
+                  {tweetState
+                    .filter((tweet) =>
+                      tweet["favoriteCount"].includes(userScreenName)
+                    )
+                    .map((tweet) => (
+                      <TweetEditing key={tweet["tweetId"]} tweet={tweet} />
+                    ))}
+                </>
+              );
+            case "media":
+              return (
+                <>
+                  {tweetState
+                    .filter(
+                      (tweet) =>
+                        tweet["userScreenName"] === userScreenName &&
+                        tweet["imgAttachmentUrl"]
+                    )
+                    .map((tweet) => (
+                      <TweetEditing key={tweet["tweetId"]} tweet={tweet} />
+                    ))}
+                </>
+              );
+          }
+        })()}
       </Box>
     </Box>
   );
