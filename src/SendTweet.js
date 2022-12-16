@@ -44,8 +44,13 @@ import {
 import styled from "styled-components";
 import AudienceSelectPopover from "./AudienceSelectPopover";
 import TweetInput from "./TweetInput";
+import TweetPostsContext from "./TweetPostsContext";
 
 const SendTweet = () => {
+  const { tweetState, loginUserName } = React.useContext(TweetPostsContext);
+  const profileImg = tweetState.filter(
+    (user) => user["userScreenName"] === loginUserName
+  )[0]["profileImgUrl"];
   return (
     <Box
       sx={{
@@ -76,8 +81,8 @@ const SendTweet = () => {
             }}
           >
             <Avatar
-              src="https://pbs.twimg.com/profile_images/1322637593050304514/uKo8jH2y_bigger.jpg"
-              alt="crescendo logo"
+              src={profileImg}
+              alt={loginUserName}
               sx={{
                 width: 48,
                 height: 48,

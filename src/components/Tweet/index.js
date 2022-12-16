@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link as RouterLink } from "react-router-dom";
 import Header from "./Header";
 import ActionBar from "./ActionBar";
 import { useContext } from "react";
@@ -80,7 +80,9 @@ const Tweet = ({
         spacing={3}
         sx={{ display: "flex" }}
       >
-        <Avatar src={avatarSrc} sx={{ flex: "none" }} />
+        <RouterLink to={`/profile/${tweet["userScreenName"]}`}>
+          <Avatar src={avatarSrc} sx={{ flex: "none" }} />
+        </RouterLink>
         <Stack
           direction="column"
           alignItems="flex-start"

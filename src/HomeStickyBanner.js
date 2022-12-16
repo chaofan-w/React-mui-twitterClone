@@ -31,7 +31,7 @@ import {
 import { AutoAwesome } from "@mui/icons-material";
 import styled from "styled-components";
 
-const HomeStickyBanner = () => {
+const HomeStickyBanner = ({ homeContent }) => {
   return (
     <Box>
       <Paper
@@ -46,22 +46,7 @@ const HomeStickyBanner = () => {
           borderRight: "1px solid rgb(225,225,225) ",
         }}
       >
-        <Stack
-          direction="row"
-          alignItems="center"
-          justifyContent="space-between"
-          sx={{
-            width: "100%",
-            height: 48,
-            p: 3,
-            bgcolor: "transparent",
-          }}
-        >
-          <Typography fontWeight="medium">Home</Typography>
-          <IconButton>
-            <AutoAwesome />
-          </IconButton>
-        </Stack>
+        {homeContent}
       </Paper>
     </Box>
   );

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link as RouterLink } from "react-router-dom";
 //customize mui components from classes
 import BadgeUnstyled, { badgeUnstyledClasses } from "@mui/base/BadgeUnstyled";
 import { blue, grey } from "@mui/material/colors";
@@ -47,6 +48,7 @@ import styled from "styled-components";
 // how to import svgs in react
 import twitterLogo from "./assets/Logo-blue.svg";
 import crescendoLogo from "./assets/crescendo-logo.png";
+import TweetPostsContext from "./TweetPostsContext";
 
 const Img = styled.img({
   display: "block",
@@ -97,56 +99,65 @@ const StyledBadge = styled(BadgeUnstyled)(
 `
 );
 
-const sideBarItems = [
-  {
-    icon: (
-      <Badge variant="dot" color="primary" overlap="circular">
-        <Home sx={{ ml: -1.5, fontSize: 28 }} />
-      </Badge>
-    ),
-    label: "Home",
-  },
-  {
-    icon: <Tag sx={{ ml: -1.5, fontSize: 28 }} />,
-    label: "Explore",
-  },
-  {
-    icon: (
-      <StyledBadge
-        variant="standard"
-        color="primary"
-        overlap="circular"
-        badgeContent={111}
-        max={99}
-      >
-        <NotificationsNone sx={{ ml: -1.5, fontSize: 28 }} />
-      </StyledBadge>
-    ),
-    label: "Notifications",
-  },
-  {
-    icon: <MailOutline sx={{ ml: -1.5, fontSize: 28 }} />,
-    label: "Messages",
-  },
-  {
-    icon: <BookmarkBorder sx={{ ml: -1.5, fontSize: 28 }} />,
-    label: "Bookmarks",
-  },
-  {
-    icon: <ListAlt sx={{ ml: -1.5, fontSize: 28 }} />,
-    label: "Lists",
-  },
-  {
-    icon: <PersonOutline sx={{ ml: -1.5, fontSize: 28 }} />,
-    label: "Profile",
-  },
-  {
-    icon: <MoreHorizRounded sx={{ ml: -1.5, fontSize: 28 }} />,
-    label: "More",
-  },
-];
-
 const SideNavBar = () => {
+  const { loginUserName } = React.useContext(TweetPostsContext);
+  const sideBarItems = [
+    {
+      icon: (
+        <Badge variant="dot" color="primary" overlap="circular">
+          <Home sx={{ ml: -1.5, fontSize: 28 }} />
+        </Badge>
+      ),
+      label: "Home",
+      link: "/",
+    },
+    {
+      icon: <Tag sx={{ ml: -1.5, fontSize: 28 }} />,
+      label: "Explore",
+      link: "",
+    },
+    {
+      icon: (
+        <StyledBadge
+          variant="standard"
+          color="primary"
+          overlap="circular"
+          badgeContent={111}
+          max={99}
+        >
+          <NotificationsNone sx={{ ml: -1.5, fontSize: 28 }} />
+        </StyledBadge>
+      ),
+      label: "Notifications",
+      link: "",
+    },
+    {
+      icon: <MailOutline sx={{ ml: -1.5, fontSize: 28 }} />,
+      label: "Messages",
+      link: "",
+    },
+    {
+      icon: <BookmarkBorder sx={{ ml: -1.5, fontSize: 28 }} />,
+      label: "Bookmarks",
+      link: "",
+    },
+    {
+      icon: <ListAlt sx={{ ml: -1.5, fontSize: 28 }} />,
+      label: "Lists",
+      link: "",
+    },
+    {
+      icon: <PersonOutline sx={{ ml: -1.5, fontSize: 28 }} />,
+      label: "Profile",
+      link: `/profile/${loginUserName}`,
+    },
+    {
+      icon: <MoreHorizRounded sx={{ ml: -1.5, fontSize: 28 }} />,
+      label: "More",
+      link: "",
+    },
+  ];
+
   return (
     <Box
       component="div"
@@ -226,43 +237,48 @@ const SideNavBar = () => {
                 },
               }}
             >
-              <ListItemButton
-                // disablePadding
-                sx={{
-                  height: {
-                    xs: 48,
-                    sm: 48,
-                    md: 48,
-                  },
-                  width: {
-                    xs: 48,
-                    sm: 48,
-                    md: "auto",
-                  },
-
-                  borderRadius: {
-                    xs: "50%",
-                    sm: "50%",
-                    md: 10,
-                  },
-                }}
+              <RouterLink
+                to={listItem.link ? listItem.link : null}
+                style={{ textDecoration: "none", color: "black" }}
               >
-                <ListItemIcon sx={{ color: "secondary.dark" }}>
-                  {listItem.icon}
-                </ListItemIcon>
-                <ListItemText
+                <ListItemButton
                   // disablePadding
-                  primary={listItem.label}
                   sx={{
-                    display: {
-                      xs: "none",
-                      sm: "none",
-                      md: "block",
+                    height: {
+                      xs: 48,
+                      sm: 48,
+                      md: 48,
                     },
-                    ml: -5,
+                    width: {
+                      xs: 48,
+                      sm: 48,
+                      md: "auto",
+                    },
+
+                    borderRadius: {
+                      xs: "50%",
+                      sm: "50%",
+                      md: 10,
+                    },
                   }}
-                />
-              </ListItemButton>
+                >
+                  <ListItemIcon sx={{ color: "secondary.dark" }}>
+                    {listItem.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    // disablePadding
+                    primary={listItem.label}
+                    sx={{
+                      display: {
+                        xs: "none",
+                        sm: "none",
+                        md: "block",
+                      },
+                      ml: -5,
+                    }}
+                  />
+                </ListItemButton>
+              </RouterLink>
             </ListItem>
           ))}
         </List>

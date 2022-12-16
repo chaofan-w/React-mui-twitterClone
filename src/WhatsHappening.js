@@ -151,7 +151,7 @@ const WhatsHappening = () => {
             }}
           >
             <ListItemButton
-              disablePadding
+              // disablePadding
               sx={{
                 width: "100%",
                 height: "auto",
@@ -160,7 +160,7 @@ const WhatsHappening = () => {
                 position: "relative",
               }}
             >
-              <Box disablePadding sx={{ width: "100%", ml: -3 }}>
+              <Box sx={{ width: "100%", ml: -3 }}>
                 <React.Fragment>
                   <Typography
                     sx={{ display: "inline" }}

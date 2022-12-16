@@ -12,6 +12,7 @@ import WhotoFollow from "./WhotoFollow";
 import SendTweet from "./SendTweet";
 import HomeStickyBanner from "./HomeStickyBanner";
 import TweetPostsContext from "./TweetPostsContext";
+import Home from "./Home";
 
 const App = () => {
   const { tweetState } = React.useContext(TweetPostsContext);
@@ -72,20 +73,7 @@ const App = () => {
           </Box>
         </Grid>
         <Grid item xs={10} sm={10} md={5.4} lg xl sx={{ position: "relative" }}>
-          <Box
-            sx={{ position: "sticky", top: 0, zIndex: 200, maxWidth: "100%" }}
-          >
-            <HomeStickyBanner />
-          </Box>
-          <Box sx={{ maxWidth: "100%" }}>
-            <SendTweet />
-          </Box>
-          <Box>
-            {tweetState &&
-              tweetState.map((tweet) => (
-                <TweetEditing key={tweet["tweetId"]} tweet={tweet} />
-              ))}
-          </Box>
+          <Home />
         </Grid>
         <Grid
           item

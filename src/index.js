@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import AppWithRouter from "./App copy";
 import { lightBlue } from "@mui/material/colors";
-import { TweetContextProvider } from "./TweetContext";
 
 import {
   ThemeProvider,
@@ -52,11 +52,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {/* <TweetContextProvider> */}
       <TweetPostsContextProvider>
-        <App />
+        <AppWithRouter />
       </TweetPostsContextProvider>
-      {/* </TweetContextProvider> */}
     </ThemeProvider>
   </React.StrictMode>
 );
