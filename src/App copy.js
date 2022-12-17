@@ -25,21 +25,19 @@ import HomeStickyBanner from "./HomeStickyBanner";
 import TweetPostsContext from "./TweetPostsContext";
 import Home from "./Home";
 import ErrorPage from "./ErroPage";
+import TweetUserContext from "./TweetUserContext";
 
 const AppWithRouter = () => {
   const { tweetState } = React.useContext(TweetPostsContext);
+  const { tweetUserState, tweetUserDispatch } =
+    React.useContext(TweetUserContext);
 
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Home />,
-  //     errorElement: <ErrorPage />,
-  //   },
-  //   {
-  //     path: "/profile/:userScreenName",
-  //     element: <UserHomePage />,
-  //   },
-  // ]);
+  // React.useEffect(() => {
+  //   tweetUserDispatch({
+  //     type: "loadUserData",
+  //   });
+  // }, []);
+
   return (
     <Router>
       <Box
@@ -48,9 +46,9 @@ const AppWithRouter = () => {
           width: "100vw",
           maxWidth: "1280px",
           overflow: "auto",
-          "&::-webkit-scrollbar": {
-            width: 0,
-          },
+          // "&::-webkit-scrollbar": {
+          //   width: 0,
+          // },
         }}
       >
         <Grid

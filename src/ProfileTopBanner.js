@@ -50,26 +50,68 @@ import {
   CalendarMonthOutlined,
   LocationOnOutlined,
 } from "@mui/icons-material";
+import TweetUserContext from "./TweetUserContext";
 
 const ProfileTopBanner = ({ user }) => {
-  const { userData, loginUserName } = React.useContext(TweetPostsContext);
-  const selectedUser = userData.filter(
-    (item) => item["userScreenName"] === user
-  )[0];
+  const { loginUserName } = React.useContext(TweetPostsContext);
+  const { tweetUserState, tweetUserDispatch } =
+    React.useContext(TweetUserContext);
+  // const selectedUser = tweetUserState.filter(
+  //   (item) => item["userScreenName"] === user
+  // )[0];
 
   const {
-    profileBkgImgUrl,
-    profileImgUrl,
+    userId,
     userName,
     userScreenName,
+    profileImgUrl,
     userLocation,
     userStartDate,
     userDescription,
+    profileBkgImgUrl,
     userFollowingAccounts,
     userFollowedByAccounts,
-  } = selectedUser;
+  } = tweetUserState.filter((u) => u["userScreenName"] === user)[0];
+
+  // console.log(userFollowingAccounts);
 
   const startDate = moment.unix(userStartDate).format("MMMM YYYY");
+
+  const handleFollowUser = (e) => {
+    e.preventDefault();
+    const loginUser = loginUserName;
+    // console.log(loginUser);
+    const followUser = user;
+    // const loginUserInfo = tweetUserState.filter(
+    //   (u) => u["userScreenName"] === loginUser
+    // )[0];
+    // console.log(loginUserInfo);
+    if (
+      tweetUserState.filter((u) => u["userScreenName"] === loginUser)[0][
+        "userFollowingAccounts"
+      ] &&
+      tweetUserState
+        .filter((u) => u["userScreenName"] === loginUser)[0]
+        ["userFollowingAccounts"].includes(followUser)
+    ) {
+      tweetUserDispatch({
+        type: "unfollowUser",
+        userScreenName: followUser,
+      });
+    } else if (
+      tweetUserState.filter((u) => u["userScreenName"] === loginUser)[0][
+        "userFollowingAccounts"
+      ] &&
+      !tweetUserState
+        .filter((u) => u["userScreenName"] === loginUser)[0]
+        ["userFollowingAccounts"].includes(followUser)
+    ) {
+      tweetUserDispatch({
+        type: "followUser",
+        userScreenName: followUser,
+      });
+    }
+  };
   return (
     <Box
       component="div"
@@ -163,6 +205,7 @@ const ProfileTopBanner = ({ user }) => {
                   bgcolor: "primary.main",
                 },
               }}
+              onClick={handleFollowUser}
             >
               {userFollowedByAccounts.includes(loginUserName)
                 ? "Following"
