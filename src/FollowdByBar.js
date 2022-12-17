@@ -42,24 +42,46 @@ import {
 } from "@mui/material";
 import { AutoAwesome, ArrowBack } from "@mui/icons-material";
 import ProfileTopBanner from "./ProfileTopBanner";
+import TweetUserContext from "./TweetUserContext";
 
 const FollowedByBar = ({ user }) => {
   const { tweetState, loginUserName, userData } =
     React.useContext(TweetPostsContext);
-  const loginUserData = userData.filter(
-    (user) => user["userScreenName"] === loginUserName
-  )[0];
+  const { tweetUserState } = React.useContext(TweetUserContext);
 
-  const userInfo = userData.filter((u) => u["userScreenName"] === user)[0];
+  // const loginUserData = tweetUserState.filter(
+  //   (u) => u["userScreenName"] === loginUserName
+  // )[0];
+
+  const userFollowingAccounts = tweetUserState.filter(
+    (u) => u["userScreenName"] === loginUserName
+  )[0]["userFollowingAccounts"];
+  // console.log(userFollowingAccounts);
+
+  const followUserFollowedByAccounts = tweetUserState.filter(
+    (u) => u["userScreenName"] === user
+  )[0]["userFollowedByAccounts"];
+  // console.log(followUserFollowedByAccounts);
+
+  // const userInfo = tweetUserState.filter(
+  //   (u) => u["userScreenName"] === user
+  // )[0];
   // console.log(userInfo);
-  const userFollowedByAccounts = userInfo["userFollowedByAccounts"];
+  // const userFollowedByAccounts = userInfo["userFollowedByAccounts"];
   // console.log(userFollowedByAccounts);
 
-  const FollowedByFollowingAccounts = user
-    ? loginUserData["userFollowingAccounts"].filter((following) =>
-        userFollowedByAccounts.includes(following)
-      )
-    : null;
+  // const FollowedByFollowingAccounts = user
+  //   ? loginUserData["userFollowingAccounts"].filter((following) =>
+  //       userFollowedByAccounts.includes(following)
+  //     )
+  //   : null;
+  const FollowedByFollowingAccounts =
+    userFollowingAccounts.length > 0
+      ? userFollowingAccounts.filter((following) =>
+          followUserFollowedByAccounts.includes(following)
+        )
+      : null;
+  console.log(FollowedByFollowingAccounts);
 
   return (
     <Box sx={{ width: "100%", height: "fit-content", mb: 4 }}>
@@ -69,7 +91,7 @@ const FollowedByBar = ({ user }) => {
         justifyContent="flex-start"
         sx={{ width: "100%", height: 30 }}
       >
-        {FollowedByFollowingAccounts.length > 0 ? (
+        {FollowedByFollowingAccounts ? (
           <Stack
             direction="row"
             alignItems="flex-start"
@@ -110,6 +132,7 @@ const FollowedByBar = ({ user }) => {
                   (_, index) => index
                 ).map((i) => (
                   <Avatar
+                    key={"avatar_" + i}
                     src={
                       userData.filter(
                         (user) =>

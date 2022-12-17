@@ -12,6 +12,7 @@ import {
   alpha,
 } from "@mui/material";
 import { TweetPostsContextProvider } from "./TweetPostsContext";
+import { TweetUserContextProvider } from "./TweetUserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -52,9 +53,11 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <TweetPostsContextProvider>
-        <AppWithRouter />
-      </TweetPostsContextProvider>
+      <TweetUserContextProvider>
+        <TweetPostsContextProvider>
+          <AppWithRouter />
+        </TweetPostsContextProvider>
+      </TweetUserContextProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

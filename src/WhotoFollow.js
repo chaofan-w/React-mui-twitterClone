@@ -131,17 +131,7 @@ const WhotoFollow = () => {
   return (
     <Box component="div" sx={{ width: "100%" }}>
       <List sx={{ width: "100%" }}>
-        {/* <ListItem>
-          <ListItemText
-            primary={
-              <React.Fragment>
-                <Typography variant="h6" fontWeight="medium">
-                  Who to follow
-                </Typography>
-              </React.Fragment>
-            }
-          />
-        </ListItem> */}
+
         <Box sx={{ p: 1 }}>
           <Typography variant="h6" fontWeight="medium">
             Who to follow
