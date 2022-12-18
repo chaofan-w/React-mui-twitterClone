@@ -91,7 +91,7 @@ const FollowedByBar = ({ user }) => {
         justifyContent="flex-start"
         sx={{ width: "100%", height: 30 }}
       >
-        {FollowedByFollowingAccounts ? (
+        {FollowedByFollowingAccounts.length ? (
           <Stack
             direction="row"
             alignItems="flex-start"

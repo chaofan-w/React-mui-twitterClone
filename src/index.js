@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import AppWithRouter from "./App copy";
 import { lightBlue } from "@mui/material/colors";
+// import data from "./assets/data.json";
 
 import {
   ThemeProvider,
@@ -15,6 +16,17 @@ import { TweetPostsContextProvider } from "./TweetPostsContext";
 import { TweetUserContextProvider } from "./TweetUserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// const newData = data.map((user, index) => {
+//   const userScreenName = user["userScreenName"];
+//   data.forEach((u) => {
+//     if (u["userFollowingAccounts"].includes(userScreenName)) {
+//       user["userFollowedByAccounts"].push(u["userScreenName"]);
+//     }
+//   });
+//   return user;
+// });
+// console.log(newData);
 
 //https://mui.com/material-ui/customization/default-theme/
 //material ui default theme
@@ -47,7 +59,7 @@ const theme = createTheme({
   // spacing: (factor) => `${0.25 * factor}rem`,
 });
 
-console.log(theme);
+// console.log(theme);
 
 root.render(
   <React.StrictMode>
