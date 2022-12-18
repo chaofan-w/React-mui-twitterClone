@@ -7,25 +7,18 @@
     "userLocation": "Bay Area",
     "userStartDate": 1248785162,
     "userDescription": "Data Visualization at F5, co-creator of https://t.co/Du6ufw40P1 and https://t.co/oSTXIOBmC7, founder of https://t.co/mWcqmCrkXf",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme13/bg.gif",
-    "userFollowingAccounts": [
-      "Deloitte",
-      "TheEconomist",
-      "BainAlerts",
-      "GlobalBC",
-      "janm_uiux",
-      "JustinTrudeau",
-      "rcourt"
-    ],
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/60853301/1654656804/1080x360",
+    "userFollowingAccounts": ["NASA", "nytimes", "JustinTrudeau", "Reuters"],
     "userFollowedByAccounts": [
-      "JustinTrudeau",
-      "GlobalBC",
-      "BainAlerts",
-      "Reuters",
+      "mtlgazette",
+      "janm_uiux",
       "TheEconomist",
-      "rcourt",
+      "Reuters",
       "adage",
-      "francoislegault"
+      "francoislegault",
+      "NASA",
+      "GlobalBC",
+      "Deloitte"
     ]
   },
   {
@@ -36,26 +29,16 @@
     "userLocation": "Papineau",
     "userStartDate": 1206925454,
     "userDescription": "Father, husband, @liberal_party Leader, 23rd Prime Minister of Canada. | Papa, mari, chef du @parti_liberal, 23e premier ministre du Canada.",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme1/bg.png",
-    "userFollowingAccounts": [
-      "francoislegault",
-      "TheEconomist",
-      "GlobalBC",
-      "Reuters",
-      "janm_uiux",
-      "NASA",
-      "adage",
-      "ernaem",
-      "rcourt"
-    ],
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/14260960/1629043620/1080x360",
+    "userFollowingAccounts": [],
     "userFollowedByAccounts": [
-      "ernaem",
-      "GlobalBC",
-      "NASA",
       "BainAlerts",
       "mtlgazette",
-      "nytimes",
-      "rcourt"
+      "ernaem",
+      "Reuters",
+      "adage",
+      "NASA",
+      "nytimes"
     ]
   },
   {
@@ -63,26 +46,24 @@
     "userName": "Jan Mraz - UX / UI Designer",
     "userScreenName": "janm_uiux",
     "profileImgUrl": "https://pbs.twimg.com/profile_images/1480199336365592576/Gzh4OcX1_normal.jpg",
-    "userLocation": "Course, mentoring, e-book →",
+    "userLocation": "Course, mentoring, e-book \u2192",
     "userStartDate": 1634235561,
     "userDescription": "Boosting your UX / UI design expertise and career.\nCo-Founder @atherosai",
-    "profileBkgImgUrl": "None",
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/1448654550382960645/1634221530/1080x360",
     "userFollowingAccounts": [
-      "francoislegault",
-      "nytimes",
+      "mtlgazette",
       "TheEconomist",
-      "BainAlerts",
-      "GlobalBC",
-      "Reuters"
+      "Reuters",
+      "JustinTrudeau",
+      "francoislegault",
+      "Deloitte"
     ],
     "userFollowedByAccounts": [
-      "ernaem",
+      "BainAlerts",
+      "TheEconomist",
+      "Reuters",
       "JustinTrudeau",
-      "GlobalBC",
-      "NASA",
-      "Deloitte",
-      "rcourt",
-      "francoislegault"
+      "nytimes"
     ]
   },
   {
@@ -93,24 +74,14 @@
     "userLocation": "Vancouver, BC, Canada",
     "userStartDate": 1234486948,
     "userDescription": "Home of B.C.'s #1 news programming. Shaw Cable 11, Shaw HD 211.",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme15/bg.png",
-    "userFollowingAccounts": [
-      "francoislegault",
-      "BainAlerts",
-      "janm_uiux",
-      "NASA",
-      "JustinTrudeau",
-      "ernaem",
-      "rcourt"
-    ],
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/20711586/1665775419/1080x360",
+    "userFollowingAccounts": ["BainAlerts", "rcourt", "francoislegault"],
     "userFollowedByAccounts": [
-      "ernaem",
-      "JustinTrudeau",
       "janm_uiux",
-      "Reuters",
       "TheEconomist",
-      "nytimes",
-      "rcourt"
+      "rcourt",
+      "JustinTrudeau",
+      "NASA"
     ]
   },
   {
@@ -120,24 +91,15 @@
     "profileImgUrl": "https://pbs.twimg.com/profile_images/1321163587679784960/0ZxKlEKB_normal.jpg",
     "userLocation": "Pale Blue Dot",
     "userStartDate": 1198113632,
-    "userDescription": "There's space for everybody. ✨",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme1/bg.png",
-    "userFollowingAccounts": [
-      "francoislegault",
-      "nytimes",
-      "Deloitte",
-      "TheEconomist",
-      "janm_uiux",
-      "JustinTrudeau",
-      "rcourt",
-      "mtlgazette"
-    ],
+    "userDescription": "There's space for everybody. \u2728",
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/11348282/1670361785/1080x360",
+    "userFollowingAccounts": ["janm_uiux", "Reuters", "TheEconomist"],
     "userFollowedByAccounts": [
-      "JustinTrudeau",
-      "GlobalBC",
-      "BainAlerts",
+      "mtlgazette",
+      "Reuters",
+      "rcourt",
       "nytimes",
-      "francoislegault"
+      "Deloitte"
     ]
   },
   {
@@ -148,16 +110,9 @@
     "userLocation": "",
     "userStartDate": 1250189985,
     "userDescription": "Bain & Company serves global clients on issues of strategy, operations, technology, organization, digital transformation, and mergers and acquisitions.",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme1/bg.png",
-    "userFollowingAccounts": ["JustinTrudeau", "ernaem", "rcourt", "NASA"],
-    "userFollowedByAccounts": [
-      "ernaem",
-      "janm_uiux",
-      "GlobalBC",
-      "Reuters",
-      "nytimes",
-      "rcourt"
-    ]
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/65381936/1625143768/1080x360",
+    "userFollowingAccounts": [],
+    "userFollowedByAccounts": []
   },
   {
     "userId": "8457092",
@@ -167,23 +122,9 @@
     "userLocation": "Global",
     "userStartDate": 1188218555,
     "userDescription": "Sharing the latest news, research, events and more from Deloitte Global and the Deloitte network of member firms. More https://t.co/oojJsBJUDZ",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme1/bg.png",
-    "userFollowingAccounts": [
-      "francoislegault",
-      "nytimes",
-      "TheEconomist",
-      "janm_uiux",
-      "Reuters",
-      "mtlgazette"
-    ],
-    "userFollowedByAccounts": [
-      "ernaem",
-      "NASA",
-      "Reuters",
-      "TheEconomist",
-      "nytimes",
-      "francoislegault"
-    ]
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/8457092/1656038161/1080x360",
+    "userFollowingAccounts": ["NASA", "mtlgazette", "GlobalBC"],
+    "userFollowedByAccounts": []
   },
   {
     "userId": "1652541",
@@ -193,21 +134,9 @@
     "userLocation": "Around the world",
     "userStartDate": 1174427165,
     "userDescription": "Top and breaking news, pictures and videos from Reuters. For more breaking business news, follow @ReutersBiz.",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme1/bg.png",
-    "userFollowingAccounts": [
-      "TheEconomist",
-      "Deloitte",
-      "BainAlerts",
-      "GlobalBC",
-      "ernaem",
-      "mtlgazette"
-    ],
-    "userFollowedByAccounts": [
-      "JustinTrudeau",
-      "janm_uiux",
-      "Deloitte",
-      "nytimes"
-    ]
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/1652541/1573687397/1080x360",
+    "userFollowingAccounts": ["NASA", "rcourt", "mtlgazette", "Deloitte"],
+    "userFollowedByAccounts": ["JustinTrudeau", "TheEconomist"]
   },
   {
     "userId": "5988062",
@@ -217,25 +146,16 @@
     "userLocation": "London",
     "userStartDate": 1178989490,
     "userDescription": "News and analysis with a global perspective. Subscribe here: https://t.co/aFLDkU0JGd",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme1/bg.png",
-    "userFollowingAccounts": [
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/5988062/1671102016/1080x360",
+    "userFollowingAccounts": ["nytimes", "rcourt", "mtlgazette", "Deloitte"],
+    "userFollowedByAccounts": [
+      "BainAlerts",
+      "janm_uiux",
+      "rcourt",
+      "adage",
       "francoislegault",
       "nytimes",
-      "Deloitte",
-      "GlobalBC",
-      "ernaem",
-      "mtlgazette"
-    ],
-    "userFollowedByAccounts": [
-      "ernaem",
-      "JustinTrudeau",
-      "janm_uiux",
-      "NASA",
-      "Deloitte",
-      "Reuters",
-      "nytimes",
-      "rcourt",
-      "francoislegault"
+      "GlobalBC"
     ]
   },
   {
@@ -246,15 +166,15 @@
     "userLocation": "Montreal, QC",
     "userStartDate": 1249503709,
     "userDescription": "Follow for features, news and to-the-minute updates on developing stories. Join the conversation.",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme1/bg.png",
-    "userFollowingAccounts": ["JustinTrudeau"],
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/63177215/1634829410/1080x360",
+    "userFollowingAccounts": ["GlobalBC", "ernaem", "TheEconomist"],
     "userFollowedByAccounts": [
-      "NASA",
-      "Deloitte",
+      "BainAlerts",
       "Reuters",
-      "TheEconomist",
-      "nytimes",
-      "francoislegault"
+      "adage",
+      "JustinTrudeau",
+      "francoislegault",
+      "Deloitte"
     ]
   },
   {
@@ -265,24 +185,24 @@
     "userLocation": "New York City",
     "userStartDate": 1172886102,
     "userDescription": "News tips? Share them here: https://t.co/ghL9OoYKMM",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/807095/1584666392/1080x360",
     "userFollowingAccounts": [
-      "TheEconomist",
-      "Deloitte",
       "BainAlerts",
-      "GlobalBC",
-      "Reuters",
-      "NASA",
-      "JustinTrudeau",
+      "janm_uiux",
       "adage",
-      "mtlgazette"
+      "francoislegault",
+      "NASA",
+      "GlobalBC"
     ],
     "userFollowedByAccounts": [
+      "BainAlerts",
+      "mtlgazette",
       "janm_uiux",
-      "NASA",
-      "Deloitte",
       "TheEconomist",
-      "francoislegault"
+      "francoislegault",
+      "NASA",
+      "rcourt",
+      "Deloitte"
     ]
   },
   {
@@ -293,23 +213,19 @@
     "userLocation": "Western Oregon",
     "userStartDate": 1212702054,
     "userDescription": "Editor @techreview, commissioning news, features, and essays | Sci/tech journalist and forever physics nerd | Also on Mastodon: @rcourt@mastodon.social",
-    "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme9/bg.gif",
+    "profileBkgImgUrl": "https://pbs.twimg.com/profile_banners/15020933/1646087760/1080x360",
     "userFollowingAccounts": [
-      "francoislegault",
-      "TheEconomist",
-      "BainAlerts",
-      "GlobalBC",
       "janm_uiux",
-      "JustinTrudeau",
-      "ernaem"
-    ],
-    "userFollowedByAccounts": [
+      "TheEconomist",
       "ernaem",
+      "Reuters",
+      "adage",
       "JustinTrudeau",
+      "francoislegault",
       "GlobalBC",
-      "NASA",
-      "BainAlerts"
-    ]
+      "Deloitte"
+    ],
+    "userFollowedByAccounts": ["GlobalBC"]
   },
   {
     "userId": "12480582",
@@ -318,38 +234,36 @@
     "profileImgUrl": "https://pbs.twimg.com/profile_images/912682094308012032/9QkafiSn_normal.jpg",
     "userLocation": "NYC, Chicago, Los Angeles, USA",
     "userStartDate": 1200906849,
-    "userDescription": "Breaking news, trends and analysis—on advertising, marketing, commercials, agencies, tech and data. More brand innovation @creativitymag.",
+    "userDescription": "Breaking news, trends and analysis\u2014on advertising, marketing, commercials, agencies, tech and data. More brand innovation @creativitymag.",
     "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme1/bg.png",
-    "userFollowingAccounts": ["ernaem"],
-    "userFollowedByAccounts": ["JustinTrudeau", "nytimes", "francoislegault"]
+    "userFollowingAccounts": [
+      "mtlgazette",
+      "janm_uiux",
+      "ernaem",
+      "Reuters",
+      "JustinTrudeau",
+      "NASA",
+      "GlobalBC",
+      "Deloitte"
+    ],
+    "userFollowedByAccounts": [
+      "BainAlerts",
+      "janm_uiux",
+      "TheEconomist",
+      "JustinTrudeau",
+      "NASA"
+    ]
   },
   {
     "userId": "260846506",
-    "userName": "François Legault",
+    "userName": "Fran\u00e7ois Legault",
     "userScreenName": "francoislegault",
     "profileImgUrl": "https://pbs.twimg.com/profile_images/1586040568467144705/G-EwC_d5_normal.jpg",
-    "userLocation": "Montréal",
+    "userLocation": "Montr\u00e9al",
     "userStartDate": 1299282181,
-    "userDescription": "Premier ministre du Québec",
+    "userDescription": "Premier ministre du Qu\u00e9bec",
     "profileBkgImgUrl": "http://abs.twimg.com/images/themes/theme17/bg.gif",
-    "userFollowingAccounts": [
-      "nytimes",
-      "TheEconomist",
-      "Deloitte",
-      "janm_uiux",
-      "NASA",
-      "adage",
-      "ernaem",
-      "mtlgazette"
-    ],
-    "userFollowedByAccounts": [
-      "JustinTrudeau",
-      "janm_uiux",
-      "GlobalBC",
-      "NASA",
-      "Deloitte",
-      "TheEconomist",
-      "rcourt"
-    ]
+    "userFollowingAccounts": [],
+    "userFollowedByAccounts": ["Reuters", "TheEconomist"]
   }
 ]
