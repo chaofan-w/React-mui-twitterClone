@@ -4,6 +4,7 @@ import App from "./App";
 import AppWithRouter from "./App copy";
 import { lightBlue } from "@mui/material/colors";
 // import data from "./assets/data.json";
+import DefaultStyle from "./globalStyle";
 
 import {
   ThemeProvider,
@@ -64,6 +65,7 @@ const theme = createTheme({
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+      <DefaultStyle />
       <CssBaseline />
       <TweetUserContextProvider>
         <TweetPostsContextProvider>

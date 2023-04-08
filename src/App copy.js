@@ -37,18 +37,30 @@ const AppWithRouter = () => {
   //     type: "loadUserData",
   //   });
   // }, []);
+  let barTimeout;
+  document.body.onscroll = () => {
+    if (barTimeout) {
+      clearTimeout(barTimeout); //clear to reset
+    }
+    barTimeout = setTimeout(() => {
+      document.body.classList.remove("scrolling");
+    }, 500); //0.5s delay
+    document.body.classList.add("scrolling");
+  };
 
   return (
     <Router>
       <Box
         sx={{
-          height: "100vh",
-          width: "100vw",
+          width: "fit-content",
+          height: "fit-content",
+          minHeight: "100vh",
+          maxWidth: "100vw",
           maxWidth: "1280px",
           overflow: "auto",
-          // "&::-webkit-scrollbar": {
-          //   width: 0,
-          // },
+          "&::-webkit-scrollbar": {
+            width: 0,
+          },
         }}
       >
         <Grid
@@ -66,7 +78,7 @@ const AppWithRouter = () => {
             item
             xs
             sm="auto"
-            md="auto"
+            md={3.2}
             lg="auto"
             xl="auto"
             sx={{
@@ -89,6 +101,7 @@ const AppWithRouter = () => {
                 overflowX: "visible",
                 "&::-webkit-scrollbar": {
                   width: 0,
+                  display: "none",
                 },
               }}
             >
@@ -99,7 +112,7 @@ const AppWithRouter = () => {
             item
             xs={10}
             sm={10}
-            md={5.4}
+            md={5.6}
             lg
             xl
             sx={{ position: "relative" }}
@@ -117,7 +130,7 @@ const AppWithRouter = () => {
             item
             lg="auto"
             xl="auto"
-            md="auto"
+            md={3.2}
             sx={{
               // border: "1px solid yellow",
               display: {
@@ -132,8 +145,8 @@ const AppWithRouter = () => {
               gap: 3,
               position: "relative",
               // maxWidth: "100%",
-              // width: "fit-content",
               // border: "1px solid red",
+
               minWidth: {
                 md: "240px",
                 lg: "240px",
@@ -154,6 +167,8 @@ const AppWithRouter = () => {
                 //control specific component to stick to top and scroll for overflow
                 position: "fixed",
                 top: 0,
+                // right: 0,
+
                 overflowY: "scroll",
                 overflowX: "visible",
                 // ml: 0,
@@ -163,6 +178,7 @@ const AppWithRouter = () => {
                 //styling the scroll bar by select psedo element
                 "&::-webkit-scrollbar": {
                   width: 0,
+                  display: "none",
                 },
               }}
             >
@@ -173,7 +189,7 @@ const AppWithRouter = () => {
                 <Paper
                   // variant="outlined"
                   elevation={0}
-                  sx={{ bgcolor: "rgb(247,249,249)" }}
+                  sx={{ bgcolor: "rgb(247,249,249)", width: "100%" }}
                 >
                   <WhatsHappening />
                 </Paper>

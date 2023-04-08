@@ -66,7 +66,11 @@ const TweetEditing = ({ tweet }) => {
           },
         }}
       >
-        <TweetPost tweet={tweet} />
+        <TweetPost
+          key={tweet["tweetId"]}
+          tweet={tweet}
+          imgUrl={"https://dummyimage.com/640x360/fff/e2e2e2&text=place+holder"}
+        />
       </Paper>
     </Box>
   );

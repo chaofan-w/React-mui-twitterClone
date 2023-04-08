@@ -66,7 +66,7 @@ const Home = () => {
   );
 
   return (
-    <Box>
+    <Box className="postsSection">
       <Box sx={{ position: "sticky", top: 0, zIndex: 200, maxWidth: "100%" }}>
         <HomeStickyBanner homeContent={homeContent} />
       </Box>

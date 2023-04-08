@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import DefaultStyle from "./globalStyle";
 // import InputOutlinedIcon from "@mui/icons-material/InputOutlined";
 // import PatternIcon from "@mui/icons-material/Pattern";
 import { Box, Paper, Grid } from "@mui/material";
@@ -16,16 +16,31 @@ import Home from "./Home";
 
 const App = () => {
   const { tweetState } = React.useContext(TweetPostsContext);
+  // scrollbar add a scrolling event listening, when scrolling, add classname 'scrolling' to body, and applied related css style
+
+  let barTimeout;
+  document.body.onscroll = () => {
+    if (barTimeout) {
+      clearTimeout(barTimeout); //clear to reset
+    }
+    barTimeout = setTimeout(() => {
+      document.body.classList.remove("scrolling");
+    }, 500); //0.5s delay
+    document.body.classList.add("scrolling");
+  };
+
   return (
     <Box
       sx={{
-        height: "100vh",
-        width: "100vw",
-        maxWidth: "1280px",
-        overflow: "auto",
-        "&::-webkit-scrollbar": {
-          width: 0,
-        },
+        minHeight: "100vh",
+        height: "fit-content",
+        width: "fit-content",
+        maxWidth: "100vw",
+        // maxWidth: "1280px",
+        // overflow: "auto",
+        // "&::-webkit-scrollbar": {
+        //   width: 0,
+        // },
       }}
     >
       <Grid
@@ -34,7 +49,7 @@ const App = () => {
         sx={{
           maxWidth: "100%",
           minWidth: "500px",
-          height: "100%",
+          height: "fit-content",
 
           margin: "0 auto",
         }}
@@ -59,6 +74,7 @@ const App = () => {
             component="div"
             sx={{
               height: "100%",
+              width: "fit-content",
               position: "fixed",
               zIndex: 200,
               top: 0,
@@ -66,13 +82,26 @@ const App = () => {
               overflowX: "visible",
               "&::-webkit-scrollbar": {
                 width: 0,
+                display: "none",
               },
             }}
           >
             <SideNavBar />
           </Box>
         </Grid>
-        <Grid item xs={10} sm={10} md={5.4} lg xl sx={{ position: "relative" }}>
+        <Grid
+          item
+          xs={10}
+          sm={10}
+          md={5.4}
+          sx={{
+            position: "relative",
+            "&::-webkit-scrollbar": {
+              width: 0,
+              display: "none",
+            },
+          }}
+        >
           <Home />
         </Grid>
         <Grid
@@ -117,7 +146,7 @@ const App = () => {
               position: "fixed",
               top: 0,
               overflowY: "scroll",
-              overflowX: "visible",
+              // overflowX: "visible",
               // ml: 0,
               // pr: 3,
               // pt: 3,
@@ -125,6 +154,7 @@ const App = () => {
               //styling the scroll bar by select psedo element
               "&::-webkit-scrollbar": {
                 width: 0,
+                dispaly: "none",
               },
             }}
           >

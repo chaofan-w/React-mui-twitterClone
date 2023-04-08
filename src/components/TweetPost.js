@@ -5,7 +5,7 @@ import Tweet from "./Tweet";
 
 import avatar from "./assets/Christopher-Wu.png";
 
-const TweetPost = ({ tweet }) => {
+const TweetPost = ({ tweet, imgUrl }) => {
   return (
     <Box
       component="div"
@@ -27,7 +27,8 @@ const TweetPost = ({ tweet }) => {
         username={tweet["userScreenName"]}
         avatarSrc={tweet["profileImgUrl"]}
         timestamp={tweet["timestamp"]}
-        imgAttachment={tweet["imgAttachmentUrl"]}
+        imgAttachment={imgUrl}
+        // imgAttachment={tweet["imgAttachmentUrl"]}
         tweet={tweet}
       />
     </Box>
