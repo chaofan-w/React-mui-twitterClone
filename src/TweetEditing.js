@@ -1,4 +1,5 @@
 import * as React from "react";
+import keyWords from "./photoGeneratorKeyWords.js";
 //customize mui components from classes
 import BadgeUnstyled, { badgeUnstyledClasses } from "@mui/base/BadgeUnstyled";
 import { blue, grey } from "@mui/material/colors";
@@ -69,7 +70,9 @@ const TweetEditing = ({ tweet }) => {
         <TweetPost
           key={tweet["tweetId"]}
           tweet={tweet}
-          imgUrl={"https://dummyimage.com/640x360/fff/e2e2e2&text=place+holder"}
+          imgUrl={`https://source.unsplash.com/random/600x300/?${
+            keyWords[Math.floor(Math.random() * keyWords.length)]
+          }`}
         />
       </Paper>
     </Box>

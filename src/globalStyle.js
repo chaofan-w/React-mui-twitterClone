@@ -43,11 +43,11 @@ body.scrolling {
   }
   
   ::-webkit-scrollbar-track {
-    background-color: rgb(254, 254, 254, 0.7);
+    background-color: rgba(254, 254, 254, 0.7);
   }
   
   ::-webkit-scrollbar-track-piece {
-    background-color: rgb(254, 254, 254, 0.7);
+    background-color: #1DA1F250;
 }
   
   ::-webkit-scrollbar-thumb {
