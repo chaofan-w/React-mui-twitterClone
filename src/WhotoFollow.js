@@ -1,45 +1,15 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import {
   Box,
-  Button,
   Typography,
-  Container,
-  Divider,
-  Paper,
   Stack,
-  IconButton,
-  Card,
-  CardHeader,
-  Avatar,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Collapse,
-  Badge,
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
   ListItemButton,
-  Tooltip,
-  ListSubheader,
-  Grid,
-  ButtonBase,
-  SvgIcon,
-  Dialog,
-  DialogTitle,
-  Popover,
-  ListItemSecondaryAction,
 } from "@mui/material";
 import styled from "styled-components";
-import {
-  MoreHorizRounded,
-  HowToRegOutlined,
-  ScreenShare,
-} from "@mui/icons-material";
-import { lightBlue } from "@mui/material/colors";
-import zIndex from "@mui/material/styles/zIndex";
+import { HowToRegOutlined, ScreenShare } from "@mui/icons-material";
 
 const whotofollowData = [
   {
@@ -131,7 +101,6 @@ const WhotoFollow = () => {
   return (
     <Box component="div" sx={{ width: "100%" }}>
       <List sx={{ width: "100%" }}>
-
         <Box sx={{ p: 1 }}>
           <Typography variant="h6" fontWeight="medium">
             Who to follow

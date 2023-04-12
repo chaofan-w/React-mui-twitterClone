@@ -1,43 +1,15 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useParams,
-} from "react-router-dom";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UserHomePage from "./UserHomePage";
-// import Root, { rootLoader } from "./routes/root";
-// import Team, { teamLoader } from "./routes/team";
-
-// import InputOutlinedIcon from "@mui/icons-material/InputOutlined";
-// import PatternIcon from "@mui/icons-material/Pattern";
 import { Box, Paper, Grid } from "@mui/material";
-import styled from "styled-components";
 import SideNavBar from "./SideNavBar";
 import SearchAppBar from "./SearchBar";
-import TweetEditing from "./TweetEditing";
 import WhatsHappening from "./WhatsHappening";
 import WhotoFollow from "./WhotoFollow";
-import SendTweet from "./SendTweet";
-import HomeStickyBanner from "./HomeStickyBanner";
-import TweetPostsContext from "./TweetPostsContext";
 import Home from "./Home";
-import ErrorPage from "./ErroPage";
-import TweetUserContext from "./TweetUserContext";
 
 const AppWithRouter = () => {
-  const { tweetState } = React.useContext(TweetPostsContext);
-  const { tweetUserState, tweetUserDispatch } =
-    React.useContext(TweetUserContext);
-
-  // React.useEffect(() => {
-  //   tweetUserDispatch({
-  //     type: "loadUserData",
-  //   });
-  // }, []);
   let barTimeout;
   document.body.onscroll = () => {
     if (barTimeout) {

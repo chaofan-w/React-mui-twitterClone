@@ -3,58 +3,22 @@ import {
   Box,
   Button,
   Typography,
-  Container,
-  Divider,
-  Paper,
   Stack,
   IconButton,
-  Card,
-  CardHeader,
-  Avatar,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Collapse,
-  Badge,
-  List,
-  ListItem,
-  ListButton,
-  ListItemIcon,
-  ListItemText,
-  ListItemButton,
-  Tooltip,
-  ListSubheader,
-  Grid,
-  ButtonBase,
-  TextField,
-  InputLabel,
-  MenuItem,
-  FormControl,
-  Select,
-  Popover,
   Input,
-  InputBase,
 } from "@mui/material";
 
 import {
-  AutoAwesome,
-  Public,
-  SupervisedUserCircle,
-  KeyboardArrowDown,
-  Check,
-  PhotoOutlined,
   GifBoxOutlined,
   BallotOutlined,
   SentimentSatisfiedOutlined,
   CalendarMonthOutlined,
   LocationOnOutlined,
 } from "@mui/icons-material";
-import styled from "styled-components";
 import ReplyAudienceSelectPopover from "./ReplyAudienceSelectPopover copy";
 import CircularStatic from "./WordLimitProgress";
 import TweetPostsContext from "./TweetPostsContext";
 import { v4 as uuidv4 } from "uuid";
-import moment from "moment";
 import AttachTweetImgPopover from "./AttachTweetImgPopover";
 
 const tweetFeatureIcons = [

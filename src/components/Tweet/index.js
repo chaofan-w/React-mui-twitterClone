@@ -3,50 +3,17 @@ import { Link as RouterLink } from "react-router-dom";
 import Header from "./Header";
 import ActionBar from "./ActionBar";
 import { useContext } from "react";
-// import TweetContext from "../../TweetContext";
 import TweetPostsContext from "../../TweetPostsContext";
 import moment from "moment";
 import {
   Box,
-  Button,
   Typography,
-  Container,
-  Divider,
-  Paper,
   Stack,
   IconButton,
-  Card,
-  CardHeader,
   Avatar,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Collapse,
-  Badge,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  ListItemButton,
-  Tooltip,
-  ListSubheader,
-  Grid,
-  ButtonBase,
-  SvgIcon,
   Link,
 } from "@mui/material";
-import {
-  Home,
-  Tag,
-  NotificationsNone,
-  MailOutline,
-  BookmarkBorder,
-  ListAlt,
-  PersonOutline,
-  MoreHorizRounded,
-  HistoryEduOutlined,
-  HowToRegOutlined,
-} from "@mui/icons-material";
+import { MoreHorizRounded, HowToRegOutlined } from "@mui/icons-material";
 const Tweet = ({
   displayName,
   username,

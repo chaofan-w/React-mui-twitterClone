@@ -1,5 +1,4 @@
 import { createContext, useReducer } from "react";
-import moment from "moment";
 import tweetsData from "./assets/tweetsData.json";
 import userData from "./assets/userData.json";
 

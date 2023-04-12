@@ -1,47 +1,6 @@
 import * as React from "react";
-import {
-  Box,
-  Button,
-  Typography,
-  Container,
-  Divider,
-  Paper,
-  Stack,
-  IconButton,
-  Card,
-  CardHeader,
-  Avatar,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Collapse,
-  Badge,
-  List,
-  ListItem,
-  ListButton,
-  ListItemIcon,
-  ListItemText,
-  ListItemButton,
-  Tooltip,
-  ListSubheader,
-  Grid,
-  ButtonBase,
-  TextField,
-  InputLabel,
-  MenuItem,
-  FormControl,
-  Select,
-  Popover,
-} from "@mui/material";
+import { Box, Paper, Stack, IconButton, Avatar } from "@mui/material";
 
-import {
-  AutoAwesome,
-  Public,
-  SupervisedUserCircle,
-  KeyboardArrowDown,
-  Check,
-} from "@mui/icons-material";
-import styled from "styled-components";
 import AudienceSelectPopover from "./AudienceSelectPopover";
 import TweetInput from "./TweetInput";
 import TweetPostsContext from "./TweetPostsContext";

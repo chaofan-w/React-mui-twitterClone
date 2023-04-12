@@ -2,7 +2,6 @@ import styled, { keyframes } from "styled-components";
 import ScaleIn from "./ScaleIn";
 import Heart from "./Heart";
 import { useContext } from "react";
-import TweetContext from "../../TweetContext";
 import PoppingCircle from "./PoppingCircle";
 import ConfettiPiece from "./ConfettiPiece";
 import { range, sample, random } from "../utils";

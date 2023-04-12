@@ -3,43 +3,10 @@ import { Link, useParams } from "react-router-dom";
 
 // import InputOutlinedIcon from "@mui/icons-material/InputOutlined";
 // import PatternIcon from "@mui/icons-material/Pattern";
-import styled from "styled-components";
-import SideNavBar from "./SideNavBar";
-import SearchAppBar from "./SearchBar";
 import TweetEditing from "./TweetEditing";
-import WhatsHappening from "./WhatsHappening";
-import WhotoFollow from "./WhotoFollow";
-import SendTweet from "./SendTweet";
 import HomeStickyBanner from "./HomeStickyBanner";
 import TweetPostsContext from "./TweetPostsContext";
-import {
-  Box,
-  Button,
-  Typography,
-  Container,
-  Divider,
-  Paper,
-  Stack,
-  IconButton,
-  Card,
-  CardHeader,
-  Avatar,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Collapse,
-  Badge,
-  List,
-  ListItem,
-  ListButton,
-  ListItemIcon,
-  ListItemText,
-  ListItemButton,
-  Tooltip,
-  ListSubheader,
-  Grid,
-  ButtonBase,
-} from "@mui/material";
+import { Box, Typography, Stack, IconButton } from "@mui/material";
 import { AutoAwesome, ArrowBack } from "@mui/icons-material";
 import ProfileTopBanner from "./ProfileTopBanner";
 import UserPageTabBar from "./UserPageTabBar";

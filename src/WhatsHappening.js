@@ -1,43 +1,20 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import {
   Box,
-  Button,
   Typography,
-  Container,
-  Divider,
-  Paper,
-  Stack,
-  IconButton,
-  Card,
-  CardHeader,
-  Avatar,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Collapse,
-  Badge,
-  List,
   ListItem,
   ListItemIcon,
   ListItemText,
   ListItemButton,
-  Tooltip,
-  ListSubheader,
-  Grid,
   ButtonBase,
-  SvgIcon,
-  Dialog,
-  DialogTitle,
   Popover,
+  List,
 } from "@mui/material";
 import styled from "styled-components";
 import {
   MoreHorizRounded,
   SentimentVeryDissatisfied,
-  SentimentSatisfiedAlt,
 } from "@mui/icons-material";
-import { lightBlue } from "@mui/material/colors";
 const whatshappeningData = [
   {
     category: "Trending in Canada",

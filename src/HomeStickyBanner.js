@@ -1,35 +1,9 @@
 import * as React from "react";
 import {
   Box,
-  Button,
-  Typography,
-  Container,
-  Divider,
   Paper,
-  Stack,
-  IconButton,
-  Card,
-  CardHeader,
-  Avatar,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Collapse,
-  Badge,
-  List,
-  ListItem,
-  ListButton,
-  ListItemIcon,
-  ListItemText,
-  ListItemButton,
-  Tooltip,
-  ListSubheader,
-  Grid,
-  ButtonBase,
 } from "@mui/material";
 
-import { AutoAwesome } from "@mui/icons-material";
-import styled from "styled-components";
 
 const HomeStickyBanner = ({ homeContent }) => {
   return (

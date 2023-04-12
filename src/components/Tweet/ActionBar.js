@@ -4,7 +4,6 @@ import LikeButton from "../LikeButton";
 import Action from "./Action";
 import TweetActionIcon from "./TweetActionIcon";
 import { useContext } from "react";
-import TweetContext from "../../TweetContext";
 import Rotate from "./Rotate";
 import PoppingCircle from "../LikeButton/PoppingCircle";
 import TweetPostsContext from "../../TweetPostsContext";

@@ -1,13 +1,11 @@
 import { createContext, useReducer } from "react";
-import moment from "moment";
-import tweetsData from "./assets/tweetsData.json";
 import userData from "./assets/userData.json";
 
 const TweetUserContext = createContext(null);
 
 export default TweetUserContext;
 
-const loginUserName = "Reuters";
+const loginUserName = "Reuter";
 
 const initialState = [...userData];
 
@@ -94,7 +92,6 @@ export const TweetUserContextProvider = ({ children }) => {
     tweetUserReducer,
     initialState
   );
-  // const date = moment().format("h:mm a - MMM Do, YYYY");
   return (
     <TweetUserContext.Provider
       value={{

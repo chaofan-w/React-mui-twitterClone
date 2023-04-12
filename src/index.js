@@ -1,18 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import AppWithRouter from "./App copy";
 import { lightBlue } from "@mui/material/colors";
 // import data from "./assets/data.json";
 import DefaultStyle from "./globalStyle";
 
-import {
-  ThemeProvider,
-  createTheme,
-  CssBaseline,
-  Paper,
-  alpha,
-} from "@mui/material";
+import { ThemeProvider, createTheme, CssBaseline, alpha } from "@mui/material";
 import { TweetPostsContextProvider } from "./TweetPostsContext";
 import { TweetUserContextProvider } from "./TweetUserContext";
 
